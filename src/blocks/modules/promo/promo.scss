@@ -1,0 +1,61 @@
+.promo {
+    z-index: inherit;
+    position: relative;
+    min-height: 503px;
+    background: url("../img/promo_bg.jpg") center / cover no-repeat;
+    border-radius: 0 0 100px 100px;
+ 
+    &__wrapper {
+        padding-top: 77px;
+    }
+}
+
+@media (max-width: 1679px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1120px;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 968px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 648px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .promo {
+        min-height: 254px;
+        border-radius: 0 0 20px 20px;
+        
+
+        &__wrapper {
+            padding-top: 16px;
+        }
+    }
+}

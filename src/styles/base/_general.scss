@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+ a:visited, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+* {
+    font-family: "Geologica", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.container  {
+    width: 1560px;
+    margin: 0 auto;
+}

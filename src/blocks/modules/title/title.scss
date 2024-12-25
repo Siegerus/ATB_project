@@ -1,0 +1,92 @@
+@use "../../../styles/helpers/variables" as *; 
+
+.title {
+    margin: 0 auto;
+    /* width: 600px; */
+    font-weight: 500;
+    font-size: 126px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $brown;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 39px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+@media (max-width: 1679px) {
+    .container {
+        max-width: 1320px;
+
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1120px;
+    }
+
+    .title {
+        font-size: 122px;
+    }
+
+    .subtitle {
+        font-size: 36px;
+    } 
+
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 968px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 648px;
+    }
+
+    .title {
+        font-size: 118px;
+    }
+
+    .subtitle {
+        font-size: 34px;
+    } 
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .title {
+        font-size: 110px;
+    }
+
+    .subtitle {
+        font-size: 33px;
+    } 
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .title {
+        font-size: 57px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    } 
+}
