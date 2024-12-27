@@ -17,6 +17,7 @@
     &__item {
         min-height: 202px;
         width: 174px;
+        cursor: pointer;
     }
 
     &__rotate {
@@ -58,6 +59,7 @@
         position: absolute;
         top: 0;
         height: 100%;
+        cursor: pointer;
 
         img {
             margin-top: 196px;
@@ -79,6 +81,7 @@
     }
 
     &__lines {
+        z-index: 5;
         position: absolute;
         width: 237px;
         height: 136px;
@@ -93,9 +96,11 @@
 }
 
 .tns-nav {
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     margin-top: 36px;
 
     button {

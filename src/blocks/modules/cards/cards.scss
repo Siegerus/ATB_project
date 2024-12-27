@@ -1,0 +1,291 @@
+@use "../../../styles/helpers/variables" as *; 
+
+.cards {
+    padding-top: 25px;
+
+    &__br {
+        display: none;
+    }
+
+    &__spec {
+        position: relative;  
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(360px, auto));
+        grid-template-rows: minmax(322px, auto);
+        column-gap: 25px;
+        padding-top: 30px;
+    }
+
+    &__footer {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-top: 31px;
+    }
+
+    &__more {
+        position: relative;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 14px;
+        color: $brown;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: auto;
+            right: -42px;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 8px;
+            background: url("../img/icons/icon_card-arrow.svg");
+        }
+
+    }
+
+    &__arrow {
+        width: 36px;
+        height: 1px;  
+        margin-left: 6px;
+        color: $brown; 
+    }
+
+    hr {
+        margin-top: 14px;
+        margin-bottom: 0;
+    }
+
+    &-item {
+        position: relative;
+
+        &__img {
+            width: 100%;
+            max-height: 254px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        
+        &__body {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 22px 15px 21px 19px;
+        }
+
+        &__name {
+            font-weight: 500;
+            font-size: 20px;
+            color: $brown;
+        }
+
+        &__gray {
+            font-weight: 300;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: $white;
+        }
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 15px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
+            border-radius: 100%; 
+            background-color: #fff; 
+            cursor: pointer;
+
+            img {
+                max-width: 21px;
+                max-height: 19px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__lines {
+        position: absolute;
+        bottom: -59px;
+        width: 237px;
+        height: 136px;
+
+        &_rest {
+            left: 679px;
+        }
+
+        &_hotels {
+            right: 241px;
+        }
+
+        &_gids {
+            right: 241px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width: 1679px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .cards {
+        &__wrapper{
+            grid-template-columns: repeat(4, minmax(260px, auto));
+            column-gap: 15px;
+        } 
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 968px;
+    }
+
+    .cards {
+        &__wrapper{
+            grid-template-columns: repeat(4, minmax(230px, auto));
+            grid-template-rows: auto;
+            column-gap: 10px;
+        } 
+
+        &-item {
+            &__icon {
+                top: 9px;
+                right: 7px;
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 648px;
+    }
+
+    .cards {
+        &__wrapper{
+            grid-template-columns: repeat(2, minmax(300px, auto));
+            column-gap: 10px;
+        } 
+
+        &__lines {
+            left: 50%; 
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .cards {
+        &-item {
+            &__img {
+                width: 100%;
+                max-height: 253px;
+
+                img {
+                width: 100%;
+                max-height: 253px;
+                object-fit: cover;
+                }
+            }
+
+            &__icon {
+                top: 15px;
+                right: 16px;
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        &__wrapper{
+            display: block;
+        } 
+
+        &__lines {
+            left: 67px;
+            bottom: -27px;
+            width: 118px;
+            height: 67px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .cards {
+        padding-top: 25px;  
+
+        &__br {
+            display: block;
+        }
+
+        hr {
+            margin-top: 27px;
+        } 
+
+        &__wrapper {
+            padding-top: 20px;
+        }
+
+        &__footer {
+            display: none;
+        }
+
+        &-item {
+            width: 100%;
+            border: 1px solid $white;
+            border-radius: 10px;
+
+            &__gray {
+                margin-top: 3px;
+            }
+
+            &__body {
+                align-items: center;
+                padding: 33px 13px 16px 13px;   
+            }
+
+            &__icon {
+                top: 8px;
+                right: 9px; 
+            }
+        }
+    }
+
+    .cards .tns-nav {
+        margin-top: 20px;
+    }
+}

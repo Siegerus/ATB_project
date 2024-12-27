@@ -1,0 +1,170 @@
+@use "../../../styles/helpers/variables" as *; 
+
+.region {
+    padding: 25px 0 60px 0;
+       
+    &__wrapper {
+        display: flex;
+        position: relative;
+        padding-bottom: 70px;
+        border-bottom: 1px solid $white; 
+    }
+
+    &__tabs {
+        display: flex;
+        margin-top: 154px;
+    }
+
+    &__tab {
+        margin-right: 50px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: $gray;
+
+        &_active {
+            padding-bottom: 8px;
+            color: $middle-blue;
+            /* text-decoration: underline;
+            text-decoration-color: $middle-blue; */
+            border-bottom: 2px solid $middle-blue;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 760px;
+        margin-top: 66px;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        width: 760px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+
+    }
+
+    &__button {
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding: 18px 19px;
+        border: 1px solid $middle-blue;
+        border-radius: 10px;
+        font-weight: 300;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $middle-blue;
+        line-height: 19px;
+
+        &_active {
+            color: #fff;
+            background-color: $light-blue;
+        }
+    }
+
+    &__main {
+        width: 760px;
+
+        hr {
+            margin: 0;
+        }
+    }
+
+    &__map {
+        width: 557px;
+        height: 712px;
+        margin-left: 111px;
+    }
+
+    &__lines {
+        position: absolute;
+        bottom: 0;
+        left: 360px;
+    }
+}
+
+@media (max-width: 1679px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 968px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 648px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .region {
+        padding-top: 40px;
+
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__tabs {
+            margin-top: 0;
+        }
+
+        &__content {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        &__main {
+            width: 100%;
+        }
+
+        &__buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__button {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        &__map {
+            width: 349px;
+            height: 409px;
+            margin: 0 auto;
+        }
+
+        &__lines {
+            display: none;
+        }
+    }
+}

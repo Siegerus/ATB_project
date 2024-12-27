@@ -23,9 +23,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 items: 2
             },
 
-            800: {             /* w1000 */
+            794: {             /* w993 */
                 items: 4,
-                
             },
 
             985: {             /* w1232 */
@@ -40,7 +39,6 @@ window.addEventListener("DOMContentLoaded", function () {
             1400: {              /* w1442 */
                 items: 6,
             }
-
         }
     });
 
@@ -55,18 +53,27 @@ window.addEventListener("DOMContentLoaded", function () {
         slider.goTo("prev");
     });
 
-    let rotated = this.document.querySelectorAll(".slider__rotate ");
+    let sliderItem = this.document.querySelectorAll(".slider__item "),
+        rotated = this.document.querySelectorAll(".slider__rotate ");
 
-    rotated.forEach((item) => {
-        item.addEventListener("click", function() {
-            for(let i = 0; i < rotated.length; i++) {
-                rotated[i].classList.remove("slider__rotate_active");
-                this.classList.add("slider__rotate_active");
+
+    sliderItem.forEach((item) => {
+        item.addEventListener("click", function (e) {
+            if (e.target.closest(".slider__item ")) {
+                for (let i = 0; i < sliderItem.length; i++) {
+                    sliderItem[i].classList.remove("slider__item_active");
+                    this.classList.add("slider__item_active");
+                    if (sliderItem[i].classList.contains("slider__item_active")) {
+                        rotated[i].classList.add("slider__rotate_active");
+                    } else {
+                        rotated[i].classList.remove("slider__rotate_active");
+                    }
+                }
             }
         });
     });
 
-    let consoleFn = function() {
+    let consoleFn = function () {
         console.log("test");
     };
 

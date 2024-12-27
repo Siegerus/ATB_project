@@ -2,12 +2,28 @@
 
 .title {
     margin: 0 auto;
-    /* width: 600px; */
     font-weight: 500;
     font-size: 126px;
     text-transform: uppercase;
     text-align: center;
     color: $brown;
+
+    &_fz48 {
+        font-size: 48px;
+    }
+
+    &_fz28 {
+          font-size: 28px; 
+          text-align: left;
+    }
+
+    &_mt60 {
+        margin-top: 60px;
+    }
+
+    &_mg0 {
+        margin: 0;
+    }
 }
 
 .subtitle {
@@ -32,6 +48,10 @@
 
     .title {
         font-size: 122px;
+
+        &_fz48 {
+            font-size: 44px;
+        }
     }
 
     .subtitle {
@@ -54,6 +74,10 @@
 
     .title {
         font-size: 118px;
+
+        &_fz48 {
+            font-size: 46px;
+        }
     }
 
     .subtitle {
@@ -69,6 +93,10 @@
 
     .title {
         font-size: 110px;
+
+        &_fz48 {
+            font-size: 36px;    
+        }
     }
 
     .subtitle {
@@ -84,6 +112,23 @@
 
     .title {
         font-size: 57px;
+
+        &_fz48 {
+            font-size: 30px;    
+        }
+
+        &_fz28 {
+            font-size: 20px;
+        }
+
+        &_mt60 {
+            margin-top: 40px;
+            line-height: 38px;
+        }
+
+        &_mg0 {
+            margin: 0 auto;
+        }
     }
 
     .subtitle {
