@@ -72,11 +72,4 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-    let consoleFn = function () {
-        console.log("test");
-    };
-
-    slider.events.on("indexChanged", consoleFn);
-
 });

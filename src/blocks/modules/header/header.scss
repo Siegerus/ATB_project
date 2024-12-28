@@ -630,7 +630,7 @@
     }
 
     .header {
-        padding: 13px 0;
+        padding: 15px 0;
 
         &__box {
             &_logo {
@@ -663,11 +663,15 @@
         &__langWrapper {
             margin-left: 70px;
             font-size: 12px;
-            padding: 3.5px 9px 7.5px 6px;
+            padding: 6.5px 9px 7.5px 6px;
 
             li {
                 font-size: 12px;
             }
+        }
+
+        &__lang {
+            font-size: 12px;
         }
 
         &__arrow {
@@ -745,6 +749,23 @@
             &::after {
                 width: 40px;
             }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .header {
+        &_m-visible {
+            margin-left: 20px;
+        }
+
+        &__langWrapper {
+            margin-left: 24px;
         }
     }
 }

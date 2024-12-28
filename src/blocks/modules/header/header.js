@@ -1,21 +1,23 @@
-window.addEventListener("DOMContentLoaded", function () {
+const toFadeIn = function(element) {
+    if(element.classList.contains("animation__type_fadeOut")) {
+        element.classList.remove("animation__type_fadeOut");
+    }
+    element.classList.add("animation__type_fadeIn");
+};
+export {toFadeIn};
 
-    const toFadeIn = function(element) {
-        if(element.classList.contains("animation__type_fadeOut")) {
-            element.classList.remove("animation__type_fadeOut");
+const toFadeOut = function(element, activeClass) {
+    element.classList.remove("animation__type_fadeIn");
+    element.classList.add("animation__type_fadeOut");
+    element.addEventListener("animationend", (e) => {
+        if (e.target.classList.contains("animation__type_fadeOut")) {
+            element.classList.remove(activeClass);
         }
-        element.classList.add("animation__type_fadeIn");
-    };
+    });
+};
+export {toFadeOut};
 
-    const toFadeOut = function(element, activeClass) {
-        element.classList.remove("animation__type_fadeIn");
-        element.classList.add("animation__type_fadeOut");
-        element.addEventListener("animationend", (e) => {
-            if (e.target.classList.contains("animation__type_fadeOut")) {
-                element.classList.remove(activeClass);
-            }
-        });
-    };
+window.addEventListener("DOMContentLoaded", function () {
 
     let menuSet = function () {
 

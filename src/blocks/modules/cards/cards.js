@@ -1,6 +1,14 @@
 import { tns } from "tiny-slider";
 
 window.addEventListener("DOMContentLoaded", function() {
+
+    let hearts = document.querySelectorAll(".cards-item__icon");
+
+    hearts.forEach((item) => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("cards-item__icon_active");
+        });
+    });
     
     let restSlider = tns({
         container: ".cards__wrapper_rest",
@@ -9,7 +17,6 @@ window.addEventListener("DOMContentLoaded", function() {
         autoplay: false,
         controls: false,
         navPosition: "bottom",
-        autoHeight: true,
         viewportMax: 341,
         edgePadding: 0,
         responsive: {

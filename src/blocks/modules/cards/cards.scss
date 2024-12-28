@@ -106,10 +106,17 @@
             background-color: #fff; 
             cursor: pointer;
 
-            img {
+            svg {
                 max-width: 21px;
                 max-height: 19px;
                 object-fit: contain;
+                fill: #fff;
+            }
+
+            &_active {
+                svg {
+                    fill: $middle-blue;
+                }
             }
         }
     }
@@ -266,6 +273,7 @@
 
         &-item {
             width: 100%;
+            height: 322px;
             border: 1px solid $white;
             border-radius: 10px;
 

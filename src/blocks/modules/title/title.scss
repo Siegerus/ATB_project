@@ -23,6 +23,7 @@
 
     &_mg0 {
         margin: 0;
+        margin-top: 66px;
     }
 }
 
@@ -52,6 +53,10 @@
         &_fz48 {
             font-size: 44px;
         }
+
+        &_fz28 {
+            font-size: 28px;    
+        }
     }
 
     .subtitle {
@@ -78,6 +83,10 @@
         &_fz48 {
             font-size: 46px;
         }
+
+        &_fz28 {
+            font-size: 28px;    
+        }
     }
 
     .subtitle {
@@ -97,6 +106,10 @@
         &_fz48 {
             font-size: 36px;    
         }
+
+        &_fz28 {
+            font-size: 28px;    
+        }
     }
 
     .subtitle {
@@ -114,7 +127,7 @@
         font-size: 57px;
 
         &_fz48 {
-            font-size: 30px;    
+            font-size: 30px;  
         }
 
         &_fz28 {
