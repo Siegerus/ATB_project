@@ -71,13 +71,13 @@ window.addEventListener("DOMContentLoaded", function () {
             menu.classList.remove("header__langWrapper_active");
             list.classList.remove("header__lang-dropdown_active");
             arrow.classList.remove("header__arrow_active");
-            document.removeEventListener("click");
+            document.removeEventListener("click", langMenuClose);
             toFadeOut(list, "header__lang-dropdown_active");
         };
 
         menu.addEventListener("click", (e) => {
             if (e.target.closest(".header__langWrapper")) {
-                if (e.target.closest(".header__lang-dropdown")) return;
+                /* if (e.target.closest(".header__lang-dropdown")) return; */
 
                 menu.classList.toggle("header__langWrapper_active");
                 list.classList.add("header__lang-dropdown_active");
@@ -97,6 +97,20 @@ window.addEventListener("DOMContentLoaded", function () {
     };
 
     langDropdownSet();
+
+    let setTextContent = function() {
+
+        let lang = document.querySelectorAll(".header__lang-dropdown li"),
+            langPlace = document.querySelector(".header__lang");
+
+        lang.forEach((item) => {
+            item.addEventListener("click", () => {
+                langPlace.textContent = item.textContent;
+            });
+        });
+    };
+
+    setTextContent();
 
     let modalSet = function () {
         let modal = document.querySelector(".header__overlay"),
