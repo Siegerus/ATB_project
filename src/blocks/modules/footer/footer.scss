@@ -119,6 +119,14 @@
             &:nth-child(4) {
                 margin-left: 0;
             }
+
+            &__body {
+                font-size: 15px;
+            }
+        }
+
+        &__policy {
+            font-size: 13px;
         }
     }
 }

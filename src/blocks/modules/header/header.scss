@@ -78,7 +78,7 @@
         display: none;
         position: absolute;
         /* top: 39px; */
-        top: 52px;
+        top: 54px;
         left: 0;
         width: 169px;
         padding-top: 24px;
@@ -201,6 +201,8 @@
         display: flex;
         position: relative;
         align-items: center;
+        /* flex-wrap: wrap; */
+        /* max-width: 95px; */
         padding: 16px 18px;
         border-radius: 10px;
         border: 1px solid $middle-blue;
@@ -215,13 +217,21 @@
     }
 
     &__lang-dropdown {
+        display: none;
+        position: relative;
         width: 64px;
-        top: 46px;
-        padding-left: 17px;
-        padding-top: 15px;
-        padding-bottom: 10px;
+        top: 0;
+        padding: 0;
         border-radius: 10px 10px 10px 10px;
+        list-style-type: none;
         cursor: pointer;
+
+        li {
+            margin-top: 6px;
+            font-weight: 300;
+            font-size: 16px;
+            color: #fff;
+        }
         
         &_active {
             display: block;
@@ -371,11 +381,12 @@
     }
 
     .header {
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
 
         &__logo {
-            width: 239px;
-            height: 60px;
+            width: 228px;
+            height: 55px;
 
             img {
                 width: 100%;
@@ -383,9 +394,56 @@
                 object-fit: cover;
             }
         }
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__lang {
+            font-size: 14px;
+        }
+
+        &__langWrapper {
+            padding: 14px 15px
+        }
+
+        &__box_enter {
+            align-items: center;
+        }
+
+
+        &__heart {
+            width: 52px;
+            height: 52px;
+
+            img {
+                max-width: 27px;
+                max-height: 24px;
+            }
+        }
+
+        &__person {
+            width: 52px;
+            height: 52px;
+
+            img {
+                max-width: 34px;
+                max-height: 30px;
+            }
+        }
+
+        &__in {
+            font-size: 15px;
+        }
+
+        &__arrow {
+            width: 16px;
+            height: 18px;
+        }
         
         &__nav {
-            margin-left: 45px;
+            margin-left: 60px;
+            padding: 17px 19px
         }
 
         &__box_logo {
@@ -467,7 +525,7 @@
         }
 
         &__heart {
-            margin-left: 13px;
+            margin-left: 25px;
         }
 
         &__lines {
@@ -621,9 +679,9 @@
     .header {
         max-width: 100%;
 
-        &__logo {
+        /* &__logo {
             max-width: 185px;
-        }
+        } */
 
         &__lines {
             max-width: 200px;
