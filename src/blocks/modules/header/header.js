@@ -63,7 +63,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let menu = document.querySelector(".header__langWrapper"),
             arrow = document.querySelector(".header__arrow"),
-            liHidden  = document.querySelectorAll(".header__lang-hidden"),
             list = document.querySelector(".header__lang-dropdown");
 
         let langMenuClose = function (e) {
@@ -85,14 +84,13 @@ window.addEventListener("DOMContentLoaded", function () {
                 arrow.classList.toggle("header__arrow_active");
 
                 if (menu.classList.contains("header__langWrapper_active")) {
-                    document.addEventListener("click", langMenuClose
+                    document.addEventListener("click", langMenuClose 
                     );
-                    liHidden.forEach((item) => item.style.display = "block");
                     toFadeIn(list);
+
                 } else {
                     document.removeEventListener("click", langMenuClose
                     );
-                    liHidden.forEach((item) => item.style.display = "none");
                     toFadeOut(list, "header__lang-dropdown_active");
                 }
             }
@@ -104,7 +102,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let setTextContent = function() {
 
         let lang = document.querySelectorAll(".header__lang-dropdown li"),
-            langPlace = document.querySelector(".header__lang-place");
+            langPlace = document.querySelector(".header__lang");
 
         lang.forEach((item) => {
             item.addEventListener("click", () => {
