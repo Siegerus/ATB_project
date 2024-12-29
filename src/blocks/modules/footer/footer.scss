@@ -79,9 +79,14 @@
         border-radius: 100px;
         background-color: #245eb5;
         cursor: pointer;
+        transition: all 0.3s;
 
         &:nth-child(2) {
             margin-right: 6px;
+        }
+
+        &:hover {
+            background-color: #4481de;
         }
     }
 

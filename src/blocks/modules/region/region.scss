@@ -85,6 +85,12 @@
         width: 557px;
         height: 712px;
         margin-left: 111px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
 
     &__lines {

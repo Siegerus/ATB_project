@@ -38,23 +38,23 @@
 @media (max-width: 1679px) {
     .container {
         max-width: 1320px;
-
-        .title {
-            font-size: 118px;
-    
-            &_fz48 {
-                font-size: 42px;
-            }
-    
-            &_fz28 {
-                font-size: 26px;    
-            }
-        }
-    
-        .subtitle {
-            font-size: 34px;
-        } 
     }
+
+    .title {
+        font-size: 118px;
+
+        &_fz48 {
+            font-size: 42px;
+        }
+
+        &_fz28 {
+            font-size: 26px;    
+        }
+    }
+
+    .subtitle {
+        font-size: 34px;
+    } 
 }
 
 @media (max-width: 1440px) {

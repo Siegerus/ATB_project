@@ -61,10 +61,17 @@
         height: 100%;
         cursor: pointer;
 
-        img {
+        svg {
             margin-top: 196px;
             width: 24px;
             height: 24px;
+            fill: $middle-blue;
+        }
+
+        &:hover {
+            svg {
+                fill: $light-blue; 
+            }
         }
     }
 
