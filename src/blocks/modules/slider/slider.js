@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", function () {
         container: ".slider__wrapper",
         items: 1,
         gutter: 34,
-        fixedWidth: 174,
         slideBy: "page",
         autoplay: false,
         controls: false,
@@ -54,8 +53,28 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     let sliderItem = this.document.querySelectorAll(".slider__item "),
+        ariaImg = this.document.querySelectorAll(".cards-item__img"),
+        ariaBody = this.document.querySelectorAll(".cards-item__body"),
+        ariaIcon = this.document.querySelectorAll(".cards-item__icon"),
         rotated = this.document.querySelectorAll(".slider__rotate ");
 
+    let ariaBlur = function(ariaItem) {
+        ariaItem.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                if (e.target == item) {
+                    item.blur();
+                }
+            });
+        });
+    };
+
+    ariaBlur(ariaImg);
+    ariaBlur(ariaBody);
+    ariaBlur(ariaIcon);
+
+    
+
+    
 
     sliderItem.forEach((item) => {
         item.addEventListener("click", function (e) {

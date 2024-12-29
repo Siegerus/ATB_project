@@ -78,6 +78,7 @@
         margin-right: 4px;
         border-radius: 100px;
         background-color: #245eb5;
+        cursor: pointer;
 
         &:nth-child(2) {
             margin-right: 6px;
@@ -98,6 +99,28 @@
     .container {
         max-width: 1320px;
     }
+
+    .footer {
+        &__headline {
+            justify-content: space-between;
+        }
+
+        &-item {
+            margin: 0 0 48px 0;
+
+            &:nth-child(2) {
+                margin-left:0;
+            }
+    
+            &:nth-child(3) {
+                margin-left: 0;
+            }
+    
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+        }
+    }
 }
 
 @media (max-width: 1440px) {
@@ -105,6 +128,11 @@
         max-width: 1120px;
     }
 
+    .footer {
+        &__headline {
+            flex-wrap: wrap;
+        }
+    }
 }
 
 @media (max-width: 1200px) {
@@ -117,6 +145,14 @@
 @media (max-width: 992px) {
     .container {
         max-width: 648px;
+    }
+
+    .footer {
+        &__headline {
+            flex-direction: column;
+            max-width: 360px;
+            margin:  0 auto;
+        }
     }
 }
 

@@ -66,6 +66,7 @@
         background-color: $middle-blue;
         border-radius: 10px;
         transition: all 0.5s;
+        cursor: pointer;
 
         &_active {
             background-color: #fff;
@@ -114,6 +115,7 @@
         flex-direction: column;
         width: 19px;
         height: 10px;
+        
 
         span {
             display: block;
@@ -174,15 +176,12 @@
         padding: 12.5px 19px;
         background-color: #fff;
 
-        input {
-            width: 90%;
-        }
-
         &_m-visible {
             display: none;
         }
         
         input {
+            width: 90%;
             border: none;
             outline: none;
             
@@ -194,6 +193,10 @@
         }
     }
 
+    &__searchicon {
+        cursor: pointer;
+    }
+
     &__langWrapper {
         display: flex;
         position: relative;
@@ -201,6 +204,7 @@
         padding: 16px 18px;
         border-radius: 10px;
         border: 1px solid $middle-blue;
+        cursor: pointer;
     }
 
     &__lang {
@@ -217,6 +221,7 @@
         padding-top: 15px;
         padding-bottom: 10px;
         border-radius: 10px 10px 10px 10px;
+        cursor: pointer;
         
         &_active {
             display: block;
@@ -247,6 +252,7 @@
         margin-left: 59px;
         border-radius: 100%;
         border: 1px solid $middle-blue;
+        cursor: pointer;
 
         img {
             width: 31px;
@@ -258,6 +264,7 @@
         display: flex;
         align-items: center;
         margin-left: 45px;
+        cursor: pointer;
     }
 
     &__in {
@@ -365,6 +372,17 @@
 
     .header {
         justify-content: center;
+
+        &__logo {
+            width: 239px;
+            height: 60px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
         
         &__nav {
             margin-left: 45px;
