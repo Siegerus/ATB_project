@@ -4,9 +4,20 @@
     min-height: 503px;
     background: url("../img/promo_bg.jpg") center / cover no-repeat;
     border-radius: 0 0 100px 100px;
+
+    &_ctg {
+        min-height: unset;
+        background: url("../img/promo-ctg_bg.jpg") center / cover no-repeat;
+        border-radius: 0 0 30px 30px;
+    }
  
     &__wrapper {
         padding-top: 77px;
+
+        &_ctg {
+            padding-top: 60px;
+            padding-bottom: 32px;
+        }
     }
 }
 

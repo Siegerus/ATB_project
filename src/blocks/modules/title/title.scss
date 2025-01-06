@@ -17,13 +17,32 @@
           text-align: left;
     }
 
+    &_fz60 {
+        font-size: 60px;
+    }
+
+    &_tal {
+        text-align: left;
+    }
+
     &_mt60 {
         margin-top: 60px;
     }
 
     &_mg0 {
         margin: 0;
+    }
+
+    &_mt66 {
         margin-top: 66px;
+    }
+
+    &_mw244 {
+        max-width: 244px;
+    }
+
+    &_lh35 {
+        line-height: 35px;
     }
 }
 
@@ -49,6 +68,10 @@
 
         &_fz28 {
             font-size: 26px;    
+        }
+
+        &_fz60 {
+            font-size: 60px;
         }
     }
 
@@ -156,6 +179,10 @@
 
         &_mg0 {
             margin: 0 auto;
+        }
+
+        &_mt66 {
+            margin-top: 0;
         }
     }
 

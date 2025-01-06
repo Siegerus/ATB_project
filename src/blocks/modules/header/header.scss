@@ -206,7 +206,9 @@
         padding: 16px 17px;
         border-radius: 10px;
         border: 1px solid $middle-blue;
+        transition: all 0.5s;
         cursor: pointer;
+
 
         &_active {
             border-radius: 10px 10px 0 0;
