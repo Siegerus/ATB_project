@@ -2,7 +2,7 @@ import { toFadeIn } from "../header/header.js";
 
 window.addEventListener("DOMContentLoaded", function () {
 
-    if(this.document.querySelector(".regon")) {
+    if(this.document.querySelector(".region")) {
         let parent = this.document.querySelector(".region__tabs"),
             tabs = this.document.querySelectorAll(".region__tab"),
             content = this.document.querySelectorAll(".region__content"),

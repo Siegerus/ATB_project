@@ -1,7 +1,7 @@
 @use "../../../styles/helpers/variables" as *; 
 
 .catalog {
-    padding-top: 60px;
+    padding: 60px 0 80px 0;
 
     &__hr {
         margin: 0;
@@ -53,7 +53,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        min-width: 1448px;
+        min-width: 1200px;
         cursor: pointer;
     }
 
@@ -160,6 +160,7 @@
             align-items: center;
             justify-content: space-between;
             padding-right: 2px;
+            cursor: pointer; 
         }
 
         &__name {
@@ -183,7 +184,6 @@
             justify-content: center;
             width: 19px;
             height: 20px;
-            /* transform: rotate(180deg); */
 
             img {
                 width: 100%;
@@ -216,6 +216,7 @@
             min-width: 17px;
             border: 1px solid #fff;
             border-radius: 2px;
+            cursor: pointer;
         }
 
         &__hidden {
@@ -235,6 +236,41 @@
             }
         }
     }
+
+    &__pages-wrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    &-page-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        margin-right: 10px;
+        border-radius: 10px;
+        border: 1px solid $middle-blue;
+        cursor: pointer;
+
+        &_active {
+            background-color: $middle-blue;
+        }
+
+        &__number {
+            font-weight: 300;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: $middle-blue;
+        }
+    }
+
+    &__select-headline {
+        display: none;
+    }
+
+
 }
 
 .simplebar-scrollbar { 
@@ -254,5 +290,165 @@
     max-width: 6px;
     margin-top: 15px;
     background: #5690e7;
+}
+
+
+@media (max-width: 1679px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .catalog {
+        &__tabs-wrapper {
+            max-width: 1220px;
+        }
+
+        &__tab {
+            margin-right: 30px;
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1120px;
+    }
+
+    .catalog {
+        &__tabs-wrapper {
+            max-width: 1010px;
+        }
+
+        &__tabs {
+            min-width: 1250px;
+        }
+
+        &__tab {
+            margin-right: 30px;
+            font-size: 18px;
+        }
+
+        &__side {
+            width: 310px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 968px;
+    }
+
+    .catalog {
+        &__tabs-wrapper {
+            max-width: 855px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 648px;
+    }
+
+    .catalog {
+        &__tabs-wrapper {
+            max-width: 538px;
+        }
+
+        &__tab {
+            font-size: 17px;
+        }
+
+        &__arrows {
+            width: 63px;
+        }
+
+        &__side {
+            width: 277px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .catalog {
+        &__tabs-wrapper {
+            position: relative;
+            flex-direction: column;
+            max-width: unset;
+            margin-top: 40px;
+            overflow: visible;
+        }
+
+        &__tabs {
+            position: absolute;
+            top: 62px;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: column;
+            min-width: unset;
+            width: 343px;
+            overflow-x: visible;
+            background-color: #fff;
+        }
+
+        &__tab {
+            font-size: 17px;
+        }
+
+        &__arrows {
+            display: none;
+        }
+
+        &__side {
+            width: 277px;
+        }
+
+        &__select-headline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 343px;
+            margin: 0 auto;
+            padding: 18px 19px;
+            border: 1px solid $white;
+            border-radius: 10px;
+
+        }
+        
+        &__select-text {
+            font-weight: 300;
+            font-size: 16px;
+            color: $gray;
+        }
+
+        &__select-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 19px;
+            height: 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
 }
 
