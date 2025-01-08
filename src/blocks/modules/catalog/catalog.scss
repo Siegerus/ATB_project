@@ -70,6 +70,10 @@
         }
     }
 
+    &__radio {
+        display: none;   
+    }
+
     &__arrows {
         display: flex;
         align-items: center;
@@ -240,7 +244,7 @@
     &__pages-wrapper {
         display: flex;
         align-items: center;
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     &-page-item {
@@ -387,6 +391,8 @@
         }
 
         &__tabs {
+            display: none;
+            z-index: 5;
             position: absolute;
             top: 62px;
             left: 50%;
@@ -394,12 +400,32 @@
             flex-direction: column;
             min-width: unset;
             width: 343px;
+            padding: 14px 19px 9px 19px;
             overflow-x: visible;
+            border-radius: 10px;
+            font-weight: 300;
+            font-size: 16px;
+            color: $gray;
             background-color: #fff;
+
+            &_active {
+                display: block;
+            }
         }
 
         &__tab {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-right: 0;
             font-size: 17px;
+            padding-bottom: 10px;
+
+            &_active {
+                border: none;
+                color: $gray;
+            }
         }
 
         &__arrows {
@@ -434,6 +460,7 @@
             justify-content: center;
             width: 19px;
             height: 20px;
+            transition: all 0.3s;
 
             img {
                 width: 100%;
@@ -441,7 +468,46 @@
             }
         }
 
+        &__radio { 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            min-width: 20px;
+            min-height: 20px;
+            padding: 4px;
+            background-clip: content-box;
+            border: 1px solid #bbbbbb;
+            background-color: #e7e6e7;
+            border-radius: 50%; 
 
+            &:checked  {
+                background-color: $brown;
+            }
+        }
+
+        &__hr {
+            display: none;
+        }
+
+
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        &__side {
+            width: unset;
+        }
+
+        &__accord-wrapper {
+            margin-top: 26px;
+        }
+
+        &-accord {
+            min-width: 344px;
+        }
     }
 }
 
@@ -449,6 +515,17 @@
     .container {
         max-width: 100%;
         padding: 0 16px;
+    }
+
+    .catalog  {
+        &-accord {
+            min-width: unset;
+            width: 100%;
+        }
+
+        &__side {
+            width: 100%;
+        }
     }
 }
 

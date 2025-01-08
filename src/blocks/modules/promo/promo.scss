@@ -63,10 +63,17 @@
     .promo {
         min-height: 254px;
         border-radius: 0 0 20px 20px;
-        
 
+        &_ctg {
+            min-height: unset;
+        }
+        
         &__wrapper {
             padding-top: 16px;
+
+            &_ctg {
+                padding-bottom: 22px;
+            }
         }
     }
 }

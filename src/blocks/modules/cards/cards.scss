@@ -327,6 +327,7 @@
 
     .cards {
         &-item {
+
             &__img {
                 width: 100%;
                 max-height: 253px;
@@ -335,6 +336,29 @@
                 width: 100%;
                 max-height: 253px;
                 object-fit: cover;
+                }
+            }
+
+            &__descr {
+                &_ctg {
+                    div {
+                        max-width: 220px;
+                        margin-top: 6px;
+                    }
+                }
+            }
+
+            &__body {
+                &_ctg {
+                    padding-top: 33px;
+                    padding-bottom: 17px;
+                }
+            }
+
+            &__footer {
+                &_ctg {
+                    padding-bottom: 24px;
+                    padding-left: 13px;
                 }
             }
 
@@ -348,6 +372,13 @@
 
         &__wrapper{
             display: block;
+
+            &_ctg {
+                display: grid;
+                grid-template-columns: minmax(343px, 360px);
+                row-gap: 30px;
+                margin-top: 78px;
+            }
         } 
 
         &__lines {
@@ -378,6 +409,14 @@
 
         &__wrapper {
             padding-top: 20px;
+
+            &_ctg {
+                padding-top: 0;
+                grid-template-rows: minmax(464px, auto);
+                grid-auto-rows: minmax(464px, auto);
+                row-gap: 30px;
+               
+            }
         }
 
         &__footer {
@@ -396,7 +435,12 @@
 
             &__body {
                 align-items: center;
-                padding: 33px 13px 16px 13px;   
+                padding: 33px 13px 16px 13px;  
+                
+                &_ctg {
+                    padding-top: 33px;
+                    padding-bottom: 17px;
+                }
             }
 
             &__icon {
@@ -408,5 +452,20 @@
 
     .cards .tns-nav {
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .cards  {
+        &__wrapper {
+            &_ctg {
+                grid-template-columns: auto;
+            }
+        }
     }
 }

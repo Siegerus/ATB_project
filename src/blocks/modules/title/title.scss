@@ -152,6 +152,12 @@
         &_fz28 {
             font-size: 28px;    
         }
+
+        &_mw244 {
+            max-width: 244px;
+            margin: 0 auto;
+            text-align: center;
+        }
     }
 
     .subtitle {
@@ -187,6 +193,21 @@
 
         &_mt66 {
             margin-top: 0;
+        }
+
+        &_mw244 {
+            max-width: 244px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        &_tal {
+            text-align: center;
+        }
+
+        &_lh-m {
+            line-height: 73px;
         }
     }
 
