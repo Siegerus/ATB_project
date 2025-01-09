@@ -51,9 +51,14 @@
         align-items: center;
         margin-top: 30px;
         flex-wrap: wrap;
+
+        input {
+            display: none;
+        }
     }
 
     &__button {
+        display: block;
         margin-right: 20px;
         margin-bottom: 20px;
         padding: 18px 19px;
