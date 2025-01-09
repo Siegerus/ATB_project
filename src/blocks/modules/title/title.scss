@@ -99,6 +99,7 @@
         &_fz60 {
             font-size: 60px;
         }
+
     }
 
     .subtitle {
@@ -129,6 +130,10 @@
         &_fz28 {
             font-size: 28px;    
         }
+
+        &_fz60 {
+            font-size: 60px;
+        }
     }
 
     .subtitle {
@@ -156,6 +161,14 @@
         &_mw244 {
             max-width: 244px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        &_fz60 {
+            font-size: 60px;
+        }
+
+        &_tal {
             text-align: center;
         }
     }
@@ -200,6 +213,7 @@
             margin: 0 auto;
             text-align: center;
             font-size: 28px;
+            line-height: 37px;
         }
 
         &_tal {

@@ -264,7 +264,18 @@
                 grid-template-columns: repeat(3, minmax(240px, 260px));
                 column-gap: 8px;
             }
-        } 
+        }
+        
+        &-item {
+            &__footer {
+                &_ctg {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    min-height: 50px;
+                }
+            }
+        }
     }
 }
 
@@ -286,6 +297,19 @@
         } 
 
         &-item {
+            &_ctg {
+                padding-bottom: 24px;
+            }
+
+            &__footer {
+                &_ctg {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    min-height: unset;
+                }
+            }
+            
             &__icon {
                 top: 9px;
                 right: 7px;
@@ -327,7 +351,6 @@
 
     .cards {
         &-item {
-
             &__img {
                 width: 100%;
                 max-height: 253px;
@@ -357,7 +380,6 @@
 
             &__footer {
                 &_ctg {
-                    padding-bottom: 24px;
                     padding-left: 13px;
                 }
             }
@@ -404,6 +426,7 @@
         }
 
         hr {
+            margin: 0;
             margin-top: 27px;
         } 
 
@@ -414,7 +437,7 @@
                 padding-top: 0;
                 grid-template-rows: minmax(464px, auto);
                 grid-auto-rows: minmax(464px, auto);
-                row-gap: 30px;
+                row-gap: 28px;
                
             }
         }
@@ -429,6 +452,15 @@
             border: 1px solid $white;
             border-radius: 10px;
 
+            &_ctg {
+                height: unset;
+                padding-bottom: 24px;
+
+                hr {
+                    margin: 20px 0 18px 0;
+                }
+            }
+
             &__gray {
                 margin-top: 3px;
             }
@@ -440,6 +472,17 @@
                 &_ctg {
                     padding-top: 33px;
                     padding-bottom: 17px;
+                }
+            }
+
+            &__descr {
+                &_ctg {
+                    padding-left: 13px;
+                    line-height: 15px;
+
+                    div {
+                        margin-top: 0;
+                    }
                 }
             }
 
@@ -461,7 +504,11 @@
         padding: 0 16px;
     }
 
-    .cards  {
+    .cards {
+        &_ctg {
+            padding-top: 0;
+        }
+
         &__wrapper {
             &_ctg {
                 grid-template-columns: auto;

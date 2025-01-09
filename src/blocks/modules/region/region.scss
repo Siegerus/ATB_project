@@ -1,7 +1,7 @@
 @use "../../../styles/helpers/variables" as *; 
 
 .region {
-    padding: 25px 0 60px 0;
+    padding: 20px 0 60px 0;
        
     &__wrapper {
         display: flex;
@@ -160,6 +160,10 @@
             hr {
                 width: 43%;
             }
+        }
+
+        &__lines {
+            left: 0;
         }
 
         &__map {
