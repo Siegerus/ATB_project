@@ -10,6 +10,14 @@
         background: url("../img/promo-ctg_bg.jpg") center / cover no-repeat;
         border-radius: 0 0 30px 30px;
     }
+
+    &_obj {
+        min-height: unset;
+        padding-bottom: 59px;
+        background: url("../img/promo-obj_bg.jpg") center / cover no-repeat;
+        border-radius: 0 0 30px 30px;
+
+    }
  
     &__wrapper {
         padding-top: 77px;
