@@ -54,9 +54,9 @@ window.addEventListener("DOMContentLoaded", function () {
             content = this.document.querySelectorAll(".cards__wrapper_ctg"),
             radio = parent.querySelectorAll("input[type='radio']"),
 
-            selectHeadline = this.document.querySelector(".catalog__select-headline"),
-            selectText = selectHeadline.querySelector(".catalog__select-text"),
-            selectArrow = selectHeadline.querySelector(".catalog__select-icon"),
+            selectHeadline = this.document.querySelector(".catalog-select-headline"),
+            selectText = selectHeadline.querySelector(".catalog-select-text"),
+            selectArrow = selectHeadline.querySelector(".catalog-select-icon"),
 
             arrowNext = this.document.querySelector(".catalog__arrow_next"),
             arrowPrev = this.document.querySelector(".catalog__arrow_prev"),
@@ -128,20 +128,20 @@ window.addEventListener("DOMContentLoaded", function () {
                 };
 
                 let hideByOverclick = function (e) {
-                    if (e.target.closest(".catalog__tabs") || e.target.closest(".catalog__select-headline")) {
+                    if (e.target.closest(".catalog__tabs") || e.target.closest(".catalog-select-headline")) {
                         return;
                     }
                     hideSelect();
-                    selectHeadline.classList.remove("catalog__select-headline_active");
+                    selectHeadline.classList.remove("catalog-select-headline_active");
                     document.removeEventListener("click", hideByOverclick);
 
                 };
 
                 selectHeadline.addEventListener("click", function (e) {
-                    if (e.target.closest(".catalog__select-headline")) {
-                        this.classList.toggle("catalog__select-headline_active");
+                    if (e.target.closest(".catalog-select-headline")) {
+                        this.classList.toggle("catalog-select-headline_active");
                     }
-                    if (selectHeadline.classList.contains("catalog__select-headline_active")) {
+                    if (selectHeadline.classList.contains("catalog-select-headline_active")) {
                         showSelect();
                         setTimeout(() => document.addEventListener("click", hideByOverclick));
 
