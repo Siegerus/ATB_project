@@ -36,11 +36,11 @@
             }
         }
     }
-    &__specwrap {
+    &-specwrap {
         position: relative;
     }
 
-    &__tabs-wrapper {
+    &-tabs-wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
@@ -53,6 +53,10 @@
         &::-webkit-scrollbar {
             width: 0;
         }
+
+        &_obj {
+            max-width: 1453px;
+        }
     }
 
     &-tabs {
@@ -61,14 +65,20 @@
         align-items: flex-start;
         min-width: 1200px;
         cursor: pointer;
+
+        &_obj {
+            min-width: 2304px;
+        }
     }
 
-    &__tab {
+    &-tab {
         margin-right: 50px;
         font-weight: 300;
         font-size: 20px;
         color: $gray;
+    }
 
+    &__tab {
         &_active {
             padding-bottom: 5px;
             color: $middle-blue;
@@ -80,7 +90,7 @@
         display: none;   
     }
 
-    &__arrows {
+    &-arrows {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -90,7 +100,7 @@
         width: 74px;
     }
     
-    &__arrow {
+    &-arrow {
         width: 24px;
         height: 24px;
         cursor: pointer;

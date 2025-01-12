@@ -93,4 +93,51 @@
     &__bottom {
         margin-top: 60px;
     }
+
+    &__tab {
+        &_active {
+            padding-bottom: 5px;
+            color: $middle-blue;
+            border-bottom: 4px solid $middle-blue;
+        }
+    }
+
+    &__content {
+        margin-top: 30px;
+    }
+
+    &-table {
+        display: grid;
+        grid-template-columns: repeat(2, 493px);
+        grid-template-rows: repeat(4, minmax(56px, auto));
+        column-gap: 1px;
+        width: 986px;
+
+        &__item {
+            padding: 18px 13px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 16px;
+            color: $gray;
+            background-color:#e2e2e2;;
+
+            &:nth-child(4n+3),  &:nth-child(4n) {
+                background-color: #f0f0f0;
+            }
+
+            /* &_light {
+                background-color: #f0f0f0;
+            } */
+
+            /* &_dark {
+                background-color:#e2e2e2;;
+            } */
+
+            &_fz14 {
+                font-size: 14px;
+            }
+        }
+    }
+
+
 }

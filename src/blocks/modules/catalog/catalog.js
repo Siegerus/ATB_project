@@ -4,6 +4,35 @@ import ResizeObserver from "resize-observer-polyfill";
 import { toFadeIn } from "../header/header.js";
 import { toFadeOut } from "../header/header.js";
 
+let setScroll = (parentIt, scrollBlockIt, arrowNextIt, arrowPrevIt, tabsIt) => {
+
+    let scrollRight = () => {
+        let x = parentIt.offsetWidth - scrollBlockIt.offsetWidth;
+        scrollBlockIt.scrollLeft = -(x);
+    };
+    arrowNextIt.addEventListener("click", () => {
+        scrollBlockIt.scrollLeft += 160;
+    });
+
+    arrowPrevIt.addEventListener("click", scrollRight);
+
+    tabsIt.forEach((item) => {
+        item.addEventListener("click", () => {
+            item.scrollIntoView(
+                { 
+                    behavior: "smooth", 
+                    inline: "center" ,
+                    block: "nearest" 
+                }
+            );
+        });
+    });
+};
+
+export { setScroll };
+
+
+
 window.addEventListener("DOMContentLoaded", function () {
     if (this.document.querySelector(".catalog")) {
         window.ResizeObserver = ResizeObserver;
@@ -124,36 +153,10 @@ window.addEventListener("DOMContentLoaded", function () {
             };
 
             setSelect();
-
-            let setScroll = () => {
-
-                let scrollRight = () => {
-                    let x = parent.offsetWidth - scrollBlock.offsetWidth;
-                    scrollBlock.scrollLeft = -(x);
-                };
-                arrowNext.addEventListener("click", () => {
-                    scrollBlock.scrollLeft += 160;
-                });
-
-                arrowPrev.addEventListener("click", scrollRight);
-
-                tabs.forEach((item) => {
-                    item.addEventListener("click", () => {
-                        item.scrollIntoView(
-                            { 
-                                behavior: "smooth", 
-                                inline: "center" ,
-                                block: "nearest" 
-                            }
-                        );
-                    });
-                });
-            };
-
-            setScroll();
         };
 
         setTabs();
+        setScroll(parent, scrollBlock, arrowNext, arrowPrev, tabs);
 
         let setAccordeon = function () {
             function showContent(a) {

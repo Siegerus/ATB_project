@@ -72,7 +72,6 @@ window.addEventListener("DOMContentLoaded", function () {
         ariaBlur(ariaBody);
         ariaBlur(ariaIcon);
     
-    
         sliderItem.forEach((item) => {
             item.addEventListener("click", function (e) {
                 if (e.target.closest(".slider__item ")) {
@@ -89,5 +88,4 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-
 });

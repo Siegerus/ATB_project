@@ -1,5 +1,39 @@
 import { toFadeIn } from "../header/header.js";
 
+let setTabs = function (contentIt, parentIt, tabsIt, tabsItClass, tabsItActClass) {
+    let hideContent = function (b) {
+        for (let a = b; a < contentIt.length; a++) {
+            contentIt[a].style.display = "none";
+        }
+    };
+    hideContent(1);
+    let showContent = function (c) {
+        if (contentIt[c].style.display == "none") {
+            contentIt[c].style.display = "flex";
+            toFadeIn(contentIt[c]);
+        }
+    };
+    parentIt.addEventListener("click", (e) => {
+        if (e.target || e.targer.classList.contains(tabsItClass)) {
+            for (let i = 0; i < tabsIt.length; i++) {
+                if (e.target == tabsIt[i]) {
+                    hideContent(0);
+                    showContent(i);
+                }
+            }
+        }
+    });
+    tabsIt.forEach((item) => {
+        item.addEventListener("click", function () {
+            for (let i = 0; i < tabsIt.length; i++) {
+                tabsIt[i].classList.remove(tabsItActClass);
+                this.classList.add(tabsItActClass);
+            }
+        });
+    });
+};
+export { setTabs };
+
 window.addEventListener("DOMContentLoaded", function () {
 
     if(this.document.querySelector(".region")) {
@@ -10,47 +44,7 @@ window.addEventListener("DOMContentLoaded", function () {
             mapsReg = this.document.querySelectorAll(".region__map_reg"),
             buttonsReg= this.document.querySelectorAll(".region__button_reg"),
             buttonsAlm = this.document.querySelectorAll(".region__button_alm");
-
-        let hideContent = function (b) {
-            for (let a = b; a < content.length; a++) {
-                content[a].style.display = "none";
-            }
-        };
-
-        hideContent(1);
-
-        let showContent = function (c) {
-            if (content[c].style.display == "none") {
-                content[c].style.display = "flex";
-                toFadeIn(content[c]);
-            }
-        };
-
-        let setTabs = function () {
-            parent.addEventListener("click", (e) => {
-                if (e.target || e.targer.classList.contains("region__tab")) {
-                    for (let i = 0; i < tabs.length; i++) {
-                        if (e.target == tabs[i]) {
-                            hideContent(0);
-                            showContent(i);
-                        }
-                    }
-                }
-            });
-        };
-
-        tabs.forEach((item) => {
-            item.addEventListener("click", function () {
-                for (let i = 0; i < tabs.length; i++) {
-                    tabs[i].classList.remove("region__tab_active");
-                    this.classList.add("region__tab_active");
-                }
-            });
-        });
-
-        setTabs();
         
-
         let setButtons = function(contentBtn, contentMap) {
 
             let hideMaps = function(b){
@@ -84,6 +78,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
         setButtons(buttonsAlm, mapsAlm);
         setButtons(buttonsReg, mapsReg); 
+
+        setTabs(content, parent, tabs, (".region__tab"), ("region__tab_active"));
     }  
 });
 
