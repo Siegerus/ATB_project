@@ -17,6 +17,10 @@
           text-align: left;
     }
 
+    &_fz38 {
+        font-size: 38px;
+    }
+
     &_fz60 {
         font-size: 60px;
     }
@@ -31,6 +35,10 @@
 
     &_mg0 {
         margin: 0;
+    }
+
+    &_tb {
+        margin: 60px 0 30px 0;
     }
 
     &_mt66 {
@@ -70,8 +78,16 @@
             font-size: 26px;    
         }
 
+        &_fz38 {
+            font-size: 38px;
+        }
+
         &_fz60 {
             font-size: 60px;
+        }
+
+        &_obj-m {
+            font-size: 38px;  
         }
     }
 
@@ -96,8 +112,16 @@
             font-size: 24px;    
         }
 
+        &_fz38 {
+            font-size: 38px;
+        }
+
         &_fz60 {
             font-size: 60px;
+        }
+
+        &_obj-m {
+            font-size: 38px;  
         }
 
     }
@@ -131,6 +155,10 @@
             font-size: 28px;    
         }
 
+        &_fz38 {
+            font-size: 36px;
+        }
+
         &_fz60 {
             font-size: 60px;
         }
@@ -158,6 +186,10 @@
             font-size: 28px;    
         }
 
+        &_fz38 {
+            font-size: 32px;
+        }
+
         &_mw244 {
             max-width: 244px;
             margin: 0 auto;
@@ -170,6 +202,12 @@
 
         &_tal {
             text-align: center;
+        }
+
+        &_obj-m {
+            font-size: 35px;
+            line-height: 45px;
+            text-align: left;
         }
     }
 
@@ -193,6 +231,10 @@
 
         &_fz28 {
             font-size: 20px;
+        }
+
+        &_fz38 {
+            font-size: 30px;
         }
 
         &_mt60 {
@@ -222,6 +264,10 @@
 
         &_lh-m {
             line-height: 73px;
+        }
+
+        &_obj-m {
+            text-align: left;
         }
     }
 

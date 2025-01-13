@@ -5,7 +5,6 @@ import { toFadeIn } from "../header/header.js";
 import { toFadeOut } from "../header/header.js";
 
 let setScroll = (parentIt, scrollBlockIt, arrowNextIt, arrowPrevIt, tabsIt) => {
-
     let scrollRight = () => {
         let x = parentIt.offsetWidth - scrollBlockIt.offsetWidth;
         scrollBlockIt.scrollLeft = -(x);
@@ -13,9 +12,7 @@ let setScroll = (parentIt, scrollBlockIt, arrowNextIt, arrowPrevIt, tabsIt) => {
     arrowNextIt.addEventListener("click", () => {
         scrollBlockIt.scrollLeft += 160;
     });
-
     arrowPrevIt.addEventListener("click", scrollRight);
-
     tabsIt.forEach((item) => {
         item.addEventListener("click", () => {
             item.scrollIntoView(
@@ -29,25 +26,80 @@ let setScroll = (parentIt, scrollBlockIt, arrowNextIt, arrowPrevIt, tabsIt) => {
     });
 };
 
+let setTabs = function (contentIt, parentIt, tabsIt, radioIt, selectTextIt, selectArrowIt, selectHeadlineIt) {
+    let hideContent = function (b) {
+        for (let a = b; a < contentIt.length; a++) {
+            contentIt[a].style.display = "none";
+        }
+    };
+    hideContent(1);
+    let showContent = function (c) {
+        if (contentIt[c].style.display == "none") {
+            contentIt[c].style.display = "grid";
+            toFadeIn(contentIt[c]);
+        }
+    };
+    parentIt.addEventListener("click", (e) => {
+        if (e.target || e.target.classList.closest(".catalog-tab")) {
+            for (let i = 0; i < tabsIt.length; i++) {
+                if (e.target == tabsIt[i]) {
+                    hideContent(0);
+                    showContent(i);
+                }
+            }
+        }
+    });
+    tabsIt.forEach((item) => {
+        item.addEventListener("click", function () {
+            for (let i = 0; i < tabsIt.length; i++) {
+                tabsIt[i].classList.remove("catalog-tab_active");
+                this.classList.add("catalog-tab_active");
+                if (tabsIt[i].classList.contains("catalog-tab_active")) {
+                    radioIt[i].checked = true;
+                    selectTextIt.textContent = tabsIt[i].textContent;
+                }
+            }
+        });
+    });
+    let setSelect = () => {
+        let showSelect = function () {
+            parentIt.classList.add("catalog-tabs_active");
+            selectArrowIt.style.transform = "rotate(180deg)";
+            toFadeIn(parentIt);
+        };
+        let hideSelect = function () {
+            selectArrowIt.style.transform = "rotate(0deg)";
+            toFadeOut(parentIt, "catalog-tabs_active");
+        };
+        let hideByOverclick = function (e) {
+            if (e.target.closest(".catalog-tabs") || e.target.closest(".catalog-select-headline")) {
+                return;
+            }
+            hideSelect();
+            selectHeadlineIt.classList.remove("catalog-select-headline_active");
+            document.removeEventListener("click", hideByOverclick);
+        };
+        selectHeadlineIt.addEventListener("click", function (e) {
+            if (e.target.closest(".catalog-select-headline")) {
+                this.classList.toggle("catalog-select-headline_active");
+            }
+            if (selectHeadlineIt.classList.contains("catalog-select-headline_active")) {
+                showSelect();
+                setTimeout(() => document.addEventListener("click", hideByOverclick));
+            } else {
+                hideSelect();
+                document.removeEventListener("click", hideByOverclick);
+            }
+        });
+    };
+    setSelect();
+};
 export { setScroll };
-
-
+export { setTabs };
 
 window.addEventListener("DOMContentLoaded", function () {
     if (this.document.querySelector(".catalog")) {
-        window.ResizeObserver = ResizeObserver;
-
-        Array.prototype.forEach.call(
-            document.querySelectorAll(".catalog-accord__scroll-box"),
-            (el) => {
-                new SimpleBar(el, {
-                    autoHide: false,
-                });
-            }
-        );
-
-        SimpleBar.removeObserver();
-
+        
         let hearts = this.document.querySelectorAll(".cards-item__icon"),
             parent = this.document.querySelector(".catalog__tabs"),
             tabs = this.document.querySelectorAll(".catalog__tab"),
@@ -68,97 +120,30 @@ window.addEventListener("DOMContentLoaded", function () {
             accordImg = this.document.querySelectorAll(".catalog-accord__icon");
 
         hearts.forEach((item) => {
-            item.addEventListener("click", () => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
                 item.classList.toggle("cards-item__icon_active");
             });
         });
 
-        let hideContent = function (b) {
-            for (let a = b; a < content.length; a++) {
-                content[a].style.display = "none";
-            }
-        };
+        let setScrollBar  = () => {
+            window.ResizeObserver = ResizeObserver;
 
-        hideContent(1);
-
-        let showContent = function (c) {
-            if (content[c].style.display == "none") {
-                content[c].style.display = "grid";
-                toFadeIn(content[c]);
-            }
-        };
-
-        let setTabs = function () {
-            parent.addEventListener("click", (e) => {
-                if (e.target || e.target.classList.closest("catalog__tab")) {
-                    for (let i = 0; i < tabs.length; i++) {
-                        if (e.target == tabs[i]) {
-                            hideContent(0);
-                            showContent(i);
-                        }
-                    }
+            Array.prototype.forEach.call(
+                document.querySelectorAll(".catalog-accord__scroll-box"),
+                (el) => {
+                    new SimpleBar(el, {
+                        autoHide: false,
+                    });
                 }
-            });
-
-            tabs.forEach((item) => {
-                item.addEventListener("click", function () {
-                    for (let i = 0; i < tabs.length; i++) {
-                        tabs[i].classList.remove("catalog__tab_active");
-                        this.classList.add("catalog__tab_active");
-                        if (tabs[i].classList.contains("catalog__tab_active")) {
-                            radio[i].checked = true;
-                            selectText.textContent = tabs[i].textContent;
-
-                        }
-                    }
-                });
-            });
-
-            let setSelect = () => {
-
-                let showSelect = function () {
-                    parent.classList.add("catalog__tabs_active");
-                    selectArrow.style.transform = "rotate(180deg)";
-                    toFadeIn(parent);
-                };
-
-                let hideSelect = function () {
-                    selectArrow.style.transform = "rotate(0deg)";
-                    toFadeOut(parent, "catalog__tabs_active");
-                };
-
-                let hideByOverclick = function (e) {
-                    if (e.target.closest(".catalog__tabs") || e.target.closest(".catalog-select-headline")) {
-                        return;
-                    }
-                    hideSelect();
-                    selectHeadline.classList.remove("catalog-select-headline_active");
-                    document.removeEventListener("click", hideByOverclick);
-
-                };
-
-                selectHeadline.addEventListener("click", function (e) {
-                    if (e.target.closest(".catalog-select-headline")) {
-                        this.classList.toggle("catalog-select-headline_active");
-                    }
-                    if (selectHeadline.classList.contains("catalog-select-headline_active")) {
-                        showSelect();
-                        setTimeout(() => document.addEventListener("click", hideByOverclick));
-
-                    } else {
-                        hideSelect();
-                        document.removeEventListener("click", hideByOverclick);
-                    }
-                });
-            };
-
-            setSelect();
+            );
+    
+            SimpleBar.removeObserver();
         };
 
-        setTabs();
-        setScroll(parent, scrollBlock, arrowNext, arrowPrev, tabs);
-
-        let setAccordeon = function () {
+        setScrollBar();
+        
+        let setAccordeon = () => {
             function showContent(a) {
                 accordImg[a].style.transform = "rotate(180deg)";
                 scrollBox[a].style.display = "block";
@@ -207,5 +192,8 @@ window.addEventListener("DOMContentLoaded", function () {
         };
 
         setAccordeon();
+
+        setTabs(content, parent, tabs, radio, selectText, selectArrow, selectHeadline);
+        setScroll(parent, scrollBlock, arrowNext, arrowPrev, tabs);
     }
 });

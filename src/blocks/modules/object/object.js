@@ -1,6 +1,5 @@
 import { tns } from "tiny-slider";
-import { setTabs } from "../region/region";
-import { setScroll } from "../catalog/catalog";
+import { setTabs, setScroll } from "../catalog/catalog";
 
 window.addEventListener("DOMContentLoaded" , function() {
 
@@ -13,13 +12,17 @@ window.addEventListener("DOMContentLoaded" , function() {
         focusBox = this.document.querySelector(".object__focus-box"),
         slider = this.document.querySelector(".object-slider"),
 
+        selectHeadline = this.document.querySelector(".catalog-select-headline"),
+        selectText = selectHeadline.querySelector(".catalog-select-text"),
+        selectArrow = selectHeadline.querySelector(".catalog-select-icon"),
+        radio = parent.querySelectorAll("input[type='radio']"),
+
         scrollNext = this.document.querySelector(".catalog-arrow_obj_next"),
         scrollPrev = this.document.querySelector(".catalog-arrow_obj_prev"),
         scrollBlock = this.document.querySelector(".object__tabs-wrapper");
 
-    console.log(scrollNext, scrollPrev, scrollBlock);
-
-    heart.addEventListener("click", function() {
+    heart.addEventListener("click", function(e) {
+        e.preventDefault();
         this.classList.toggle("cards-item__icon_active");
     });
 
@@ -33,7 +36,16 @@ window.addEventListener("DOMContentLoaded" , function() {
             speed: 400,
             nav: false,
             controls: false,
-            gutter: 9
+            gutter: 9,
+            responsive: {
+                993: {
+                    items: 4,
+                },
+
+                1200: {
+                    items: 3,
+                },
+            }
         });
     
         next.addEventListener("click", function () {
@@ -58,7 +70,7 @@ window.addEventListener("DOMContentLoaded" , function() {
     };
 
     setSlider();
-    setTabs(content, parent, tabs, (".object__tab"), ("object__tab_active"));
-    setScroll(parent, scrollBlock, scrollNext, scrollPrev, tabs);
 
+    setTabs(content, parent, tabs, radio, selectText, selectArrow, selectHeadline);
+    setScroll(parent, scrollBlock, scrollNext, scrollPrev, tabs);
 });

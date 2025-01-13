@@ -30,34 +30,37 @@
                     <img src="../img/object/obj1.png" alt="object">
                 </div>
             </div>
-            <div class="object-item cards-item cards-item_obj cards-item_ctg">
-                <h3 class="title title_tal title_fz48 object-item__title">Rixos Almaty</h3>
-                <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj object-item_footer">
-                    <div class="cards-item__rate">
-                        <div class="cards-item__rate-num">5.0</div>
-                        <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
-                        <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
-                        <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
-                        <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
-                        <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+            <div class="object__item-map-wrap">
+                <div class="object-item cards-item cards-item_obj cards-item_ctg">
+                    <h3 class="title title_tal title_fz48 object-item__title title_obj-m">Rixos Almaty</h3>
+                    <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj object-item_footer">
+                        <div class="cards-item__rate">
+                            <div class="cards-item__rate-num">5.0</div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                        </div>
+                        <div class="cards-item__rew">
+                            <div class="cards-item__rew-icon"><img src="../img/icons/icon_catalog-rew.svg" alt="rewiev"></div>
+                            <div class="cards-item__rew-text">20 отзывов</div>
+                        </div>  
                     </div>
-                    <div class="cards-item__rew">
-                        <div class="cards-item__rew-icon"><img src="../img/icons/icon_catalog-rew.svg" alt="rewiev"></div>
-                        <div class="cards-item__rew-text">20 отзывов</div>
-                    </div>  
-                </div>
-                <hr class="cards-item__hr cards-item__hr_obj">
-                <div class="object-item__descr cards-item__descr cards-item__descr_ctg cards-item__descr_obj">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан <br>
-                    <div>Пн-Пт 09:00-21:00, Сб 09:00-21:00, Вс 09:00-21:00</div>
+                    <hr class="cards-item__hr cards-item__hr_obj">
+                    <div class="object-item__descr cards-item__descr cards-item__descr_ctg cards-item__descr_obj">
+                        Улица Сейфуллина 506/99, 050012 Алматы, Казахстан <br>
+                        <div>Пн-Пт 09:00-21:00, Сб 09:00-21:00, Вс 09:00-21:00</div>
+                    </div> 
+                    <div class="cards-item__icon cards-item__icon_obj" aria-hidden="true" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
+                        </svg>
+                    </div>
                 </div> 
-                <div class="cards-item__icon cards-item__icon_obj" aria-hidden="true" aria-hidden="true">
-                    <svg>
-                        <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
-                    </svg>
-                </div>
-            </div> 
-            <div class="object__map"><img src="../img/region/map.svg" alt="map"></div>
+                <div class="object__map object__map_m-hidden"><img src="../img/region/map.svg" alt="map"></div>
+            </div>
+            <div class="object__map object__map_m-visible"><img src="../img/region/map.svg" alt="map"></div>
         </div>
         <div class="object__bottom">
             <div class="object__specwrap catalog-specwrap">
@@ -67,27 +70,28 @@
                         <div class="catalog-select-icon"><img src="../img/icons/icon-catalog-select.svg" alt="arrow"></div>
                     </div>
                     <div class="object__tabs catalog-tabs catalog-tabs_obj">
-                        <div class="object__tab object__tab_active catalog-tab">Общая информация</div>
-                        <input type="radio" name="select" class="object__radio catalog-radio">
-                        <div class="object__tab catalog-tab">Контактные данные
+                        <div class="object__tab catalog-tab catalog-tab_obj catalog-tab_active">Общая информация
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
-                        <div class="object__tab catalog-tab">Информация по объекту
+                        <div class="object__tab catalog-tab catalog-tab_obj">Контактные данные
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
-                        <div class="object__tab catalog-tab">Форма оплаты
+                        <div class="object__tab catalog-tab catalog-tab_obj">Информация по объекту
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
-                        <div class="object__tab catalog-tab">Цены
+                        <div class="object__tab catalog-tab catalog-tab_obj">Форма оплаты
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
-                        <div class="object__tab catalog-tab">Инфраструктура
+                        <div class="object__tab catalog-tab catalog-tab_obj">Цены
+                            <input type="radio" name="select" class="object__radio catalog-radio">
+                        </div>
+                        <div class="object__tab catalog-tab catalog-tab_obj">Инфраструктура
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
                         <div class="object__tab catalog-tab">Наличие общепита при месте (собственное)
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
-                        <div class="object__tab catalog-tab">Наличие места размещения (собственное)
+                        <div class="object__tab catalog-tab catalog-tab_obj">Наличие места размещения (собственное)
                             <input type="radio" name="select" class="object__radio catalog-radio">
                         </div>
                     </div>
@@ -104,6 +108,7 @@
                         </svg>
                     </div>
                 </div>
+                <hr class="object__hr">
             </div>
         </div>
         <div class="object__content">
@@ -130,7 +135,7 @@
                     GPS координаты
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
+                    Y: (41-49) <span></span> Х: (71-79)
                 </div>
                 <div class="object-table__item">
                     Реквизиты
@@ -149,283 +154,522 @@
         <div class="object__content">
             <div class="object-table">
                 <div class="object-table__item">
-                Наименование
+                    Раб. Телефон
                 </div>
                 <div class="object-table__item">
-                Rixos Almaty
+                    +7(727)341 04 51
                 </div>
                 <div class="object-table__item">
-                Юр. название 
+                    Сот. номер
+                </div>
+                <div class="object-table__item">
+                    +7(727)341 04 51
+                </div>
+                <div class="object-table__item">
+                    E-mail 
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    info@visitalmaty.kz
                 </div>
                 <div class="object-table__item">
-                    Адм. район 
+                    Сайт
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    www.visitalmaty.kz
                 </div>
                 <div class="object-table__item">
-                    GPS координаты
+                    Отдел бронирования,продаж
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
-                </div>
-                <div class="object-table__item">
-                    Реквизиты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
-                    </div>
-                <div class="object-table__item">
-                    Форма собственности
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                    г. Москва,ул Новотушенский пр-д д. 8, корп. 1
                 </div>
             </div>
         </div>
         <div class="object__content">
             <div class="object-table">
                 <div class="object-table__item">
-                Наименование
+                    Кол. Работников
                 </div>
                 <div class="object-table__item">
-                Rixos Almaty
+                    200
                 </div>
                 <div class="object-table__item">
-                Юр. название 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Образование сот-в и кол 
                 </div>
                 <div class="object-table__item">
-                    Адм. район 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Среднее
                 </div>
                 <div class="object-table__item">
-                    GPS координаты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
+                    Язык обслуживания 
                 </div>
                 <div class="object-table__item">
-                    Реквизиты
+                    Русский
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
-                    </div>
-                <div class="object-table__item">
-                    Форма собственности
+            </div>
+        </div>
+        <div class="object__content">
+            <div class="object__label-wrapper">
+                <div class="object__label-item">
+                    <div class="object__label-icon"><img src="../img/object/lables/kaspi.svg" alt="label"></div>
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                <div class="object__label-item object__label-item_spec">
+                    <div class="object__label-icon object__label-icon_spec"><img src="../img/object/lables/card.svg" alt="label"></div>
+                    <div class="object__label-descr object__label-descr_spec">Картой<br>через терминал </div>
+                </div>
+                <div class="object__label-item">
+                    <div class="object__label-icon"><img src="../img/object/lables/cash.svg" alt="label"></div>
+                    <div class="object__label-descr">Наличный</div>
+                </div>
+                <div class="object__label-item">
+                    <div class="object__label-icon"><img src="../img/object/lables/terminal.svg" alt="label"></div>
+                    <div class="object__label-descr">POS терминал</div>
+                </div>
+                <div class="object__label-item">
+                    <div class="object__label-icon"><img src="../img/object/lables/apple.svg" alt="label"></div>
+                    <div class="object__label-descr">Платежная система Apple</div>
+                </div>
+                <div class="object__label-item">
+                    <div class="object__label-descr">Другие пл. системы</div>
                 </div>
             </div>
         </div>
         <div class="object__content">
             <div class="object-table">
                 <div class="object-table__item">
-                Наименование
+                    Стоимость для взр
                 </div>
                 <div class="object-table__item">
-                Rixos Almaty
+                    200
                 </div>
                 <div class="object-table__item">
-                Юр. название 
+                    Стоимость студент
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    200
                 </div>
                 <div class="object-table__item">
-                    Адм. район 
+                    Стоимость дет.
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    200
                 </div>
                 <div class="object-table__item">
-                    GPS координаты
+                    Стоимость иностр. турист
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
+                    200
                 </div>
                 <div class="object-table__item">
-                    Реквизиты
+                    Стоимость обучение 1 час дет.
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
+                    200
                     </div>
                 <div class="object-table__item">
-                    Форма собственности
+                    Стоимость абонемент и время
                 </div>
                 <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                    200
                 </div>
             </div>
         </div>
         <div class="object__content">
             <div class="object-table">
                 <div class="object-table__item">
-                Наименование
+                    Год постройки
                 </div>
                 <div class="object-table__item">
                 Rixos Almaty
                 </div>
                 <div class="object-table__item">
-                Юр. название 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Экстреная помощь
                 </div>
                 <div class="object-table__item">
-                    Адм. район 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Текст
                 </div>
                 <div class="object-table__item">
-                    GPS координаты
+                    Наличие видеонаблюдения 
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Наличие спасателей
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Наличие охраны
+                </div>
+                <div class="object-table__item">
+                    Текст
+                    </div>
+                <div class="object-table__item">
+                    Пандусы для ЛОП
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Другие приспособления для ЛОП
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Парковка для машин или автобусов
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Виды услуг (продолжительность по времени, кол. чел в группе и т.п.)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Посещаемость объекта в месяц
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Сезонность объекта
                 </div>
                 <div class="object-table__item">
                     Реквизиты
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
+                <div class="object-table__item">
+                    Лучшее время для посещения
+                </div><div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Пропускная способность в день (вместимость человек)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Моб. Приложение
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Smart технологии (эл. билеты, виртуальная очередь и т.п.)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Аренда инвентария (какое)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Пакет услуг для туристов (скидки, групповые скидки, скидки для ЛОП и т.п.)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Аренда снаряжения (какое)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Рекомендации к посещению 
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Наличие инструктора
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Проведение инструктажа
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Медицинские или другие ограничения (какие)
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Фото и видео съемка
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Магазин
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Буфет
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Ремесленики
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Сувенирная про-я
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Wi-Fi
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+            </div>
+            <h3 class="object__undertable-title title title_fz28 title_tal title_tb">СГУ (Туалет)</h3>
+            <div class="object-table">
+                <div class="object-table__item">
+                    Благоустроенный внутри
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Стоимость за посещение 
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+            </div>
+            <div class="object__comunication">Моб. Cвязь и качество моб. Интернета от 1 до 5 (Beeline, Tele2, Altel, Kcell, Activ)</div>
+        </div>
+        <div class="object__content">
+            <div class="object-table">
+                <div class="object-table__item">
+                    Категория 
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Кухня/и
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Кол. посадочных мест
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Меню для детей
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Вег. меню
+                </div>
+                <div class="object-table__item">
+                    Текст
                     </div>
                 <div class="object-table__item">
-                    Форма собственности
+                    Средний чек по меню
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Халал меню
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Веган меню
+                </div>
+                <div class="object-table__item">
+                    Текст
                 </div>
             </div>
         </div>
         <div class="object__content">
             <div class="object-table">
                 <div class="object-table__item">
-                Наименование
+                    Кол. номеров (палат, коттеджей и тп)
                 </div>
                 <div class="object-table__item">
-                Rixos Almaty
+                    Текст
                 </div>
                 <div class="object-table__item">
-                Юр. название 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Кол. койко-мест
                 </div>
                 <div class="object-table__item">
-                    Адм. район 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
+                    Текст
                 </div>
                 <div class="object-table__item">
-                    GPS координаты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
+                    Дети бесплатно до
                 </div>
                 <div class="object-table__item">
-                    Реквизиты
+                    Текст
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
+                <div class="object-table__item">
+                    Детский тариф от и до
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Pet friendly        
+                </div>
+                <div class="object-table__item">
+                    Текст
                     </div>
                 <div class="object-table__item">
-                    Форма собственности
+                    Номера для курящих
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Номера для ЛОП       
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Время заезда
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Время выезда  
+                </div>
+                <div class="object-table__item">
+                    Текст
+                </div>
+                <div class="object-table__item">
+                    Стоимость от       
+                </div>
+                <div class="object-table__item">
+                    Текст
                 </div>
             </div>
         </div>
-        <div class="object__content">
-            <div class="object-table">
-                <div class="object-table__item">
-                Наименование
-                </div>
-                <div class="object-table__item">
-                Rixos Almaty
-                </div>
-                <div class="object-table__item">
-                Юр. название 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
-                </div>
-                <div class="object-table__item">
-                    Адм. район 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
-                </div>
-                <div class="object-table__item">
-                    GPS координаты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
-                </div>
-                <div class="object-table__item">
-                    Реквизиты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
+        <div class="object__near">
+            <h3 class="title title_fz38 title_tal object__title">Объекты рядом</h3>
+        </div>
+        <div class="cards cards_ctg cards_obj">
+            <div class="cards__wrapper cards__wrapper_obj">
+                <div class="cards-item">
+                    <div class="cards-item__img cards-item__img_obj" aria-hidden="true"><img src="../img/cards/rests/card4.png" alt="card"></div>
+                    <div class="cards-item__body cards-item__body_obj-sm" aria-hidden="true">
+                        <div class="cards-item__name">Casa de Khasia</div>
+                        <div class="cards-item__gray">отель</div>
                     </div>
-                <div class="object-table__item">
-                    Форма собственности
+                    <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj-sm">
+                        <div class="cards-item__rate">
+                            <div class="cards-item__rate-num">5.0</div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                        </div>   
+                    </div>
+                    <div class="cards-item__icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
+                        </svg>
+                    </div>
                 </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
+                <div class="cards-item">
+                    <div class="cards-item__img cards-item__img_obj" aria-hidden="true"><img src="../img/cards/rests/card4.png" alt="card"></div>
+                    <div class="cards-item__body cards-item__body_obj-sm" aria-hidden="true">
+                        <div class="cards-item__name">Casa de Khasia</div>
+                        <div class="cards-item__gray">отель</div>
+                    </div>
+                    <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj-sm">
+                        <div class="cards-item__rate">
+                            <div class="cards-item__rate-num">5.0</div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                        </div>   
+                    </div>
+                    <div class="cards-item__icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cards-item">
+                    <div class="cards-item__img cards-item__img_obj" aria-hidden="true"><img src="../img/cards/rests/card4.png" alt="card"></div>
+                    <div class="cards-item__body cards-item__body_obj-sm" aria-hidden="true">
+                        <div class="cards-item__name">Casa de Khasia</div>
+                        <div class="cards-item__gray">отель</div>
+                    </div>
+                    <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj-sm">
+                        <div class="cards-item__rate">
+                            <div class="cards-item__rate-num">5.0</div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                        </div>   
+                    </div>
+                    <div class="cards-item__icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cards-item">
+                    <div class="cards-item__img cards-item__img_obj" aria-hidden="true"><img src="../img/cards/rests/card4.png" alt="card"></div>
+                    <div class="cards-item__body cards-item__body_obj-sm" aria-hidden="true">
+                        <div class="cards-item__name">Casa de Khasia</div>
+                        <div class="cards-item__gray">отель</div>
+                    </div>
+                    <div class="cards-item__footer cards-item__footer_ctg cards-item__footer_obj-sm">
+                        <div class="cards-item__rate">
+                            <div class="cards-item__rate-num">5.0</div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                            <div class="cards-item__stars"><img src="../img/icons/icon_catalog-star.svg" alt="star"></div>
+                        </div>   
+                    </div>
+                    <div class="cards-item__icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="../img/sprites/sprite.svg#icon_card-heart"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="object__content">
-            <div class="object-table">
-                <div class="object-table__item">
-                Наименование
-                </div>
-                <div class="object-table__item">
-                Rixos Almaty
-                </div>
-                <div class="object-table__item">
-                Юр. название 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
-                </div>
-                <div class="object-table__item">
-                    Адм. район 
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Улица Сейфуллина 506/99, 050012 Алматы, Казахстан
-                </div>
-                <div class="object-table__item">
-                    GPS координаты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    Y: (41-49) Х: (71-79)
-                </div>
-                <div class="object-table__item">
-                    Реквизиты
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    БИН: 54895840843829965
-                    </div>
-                <div class="object-table__item">
-                    Форма собственности
-                </div>
-                <div class="object-table__item object-table__item_fz14">
-                    ИП, ТОО, ГУ, КГУ, КГП, ГКП на ПХВ, ГЧП
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>

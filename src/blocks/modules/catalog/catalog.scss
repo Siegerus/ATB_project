@@ -78,7 +78,7 @@
         color: $gray;
     }
 
-    &__tab {
+    &-tab {
         &_active {
             padding-bottom: 5px;
             color: $middle-blue;
@@ -319,13 +319,19 @@
     }
 
     .catalog {
-        &__tabs-wrapper {
+        &-tabs-wrapper {
             max-width: 1220px;
         }
 
-        &__tab {
+        &-tabs {
+            &_obj {
+                min-width: 1953px
+            }
+        }
+
+        &-tab {
             margin-right: 30px;
-            font-size: 18px;
+            font-size: 17px;
         }
     }
 }
@@ -336,17 +342,20 @@
     }
 
     .catalog {
-        &__tabs-wrapper {
+        &-tabs-wrapper {
             max-width: 1010px;
         }
 
-        &__tabs {
+        &-tabs {
             min-width: 1250px;
+
+            &_obj {
+                min-width: 1953px
+            }
         }
 
-        &__tab {
+        &-tab {
             margin-right: 30px;
-            font-size: 18px;
         }
 
         &__side {
@@ -361,7 +370,7 @@
     }
 
     .catalog {
-        &__tabs-wrapper {
+        &-tabs-wrapper {
             max-width: 855px;
         }
     }
@@ -373,15 +382,21 @@
     }
 
     .catalog {
-        &__tabs-wrapper {
+        &-tabs-wrapper {
             max-width: 538px;
         }
 
-        &__tab {
+        &-tab {
             font-size: 17px;
         }
 
-        &__arrows {
+        &-tabs {
+            &_obj {
+                min-width: 1821px;
+            }
+        }
+
+        &-arrows {
             width: 63px;
         }
 
@@ -398,7 +413,7 @@
     }
 
     .catalog {
-        &__tabs-wrapper {
+        &-tabs-wrapper {
             position: relative;
             flex-direction: column;
             max-width: unset;
@@ -406,7 +421,7 @@
             overflow: visible;
         }
 
-        &__tabs {
+        &-tabs {
             display: none;
             z-index: 5;
             position: absolute;
@@ -429,7 +444,7 @@
             }
         }
 
-        &__tab {
+        &-tab {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -438,13 +453,17 @@
             font-size: 17px;
             padding-bottom: 10px;
 
+            &_obj {
+                padding-bottom: 15px;
+            }
+
             &_active {
                 border: none;
                 color: $gray;
             }
         }
 
-        &__arrows {
+        &-arrows {
             display: none;
         }
 
@@ -566,7 +585,7 @@
             width: 100%;
         }
 
-        &__tabs {
+        &-tabs {
             width: 100%;
         }
     }

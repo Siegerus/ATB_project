@@ -7,7 +7,8 @@ window.addEventListener("DOMContentLoaded", function() {
         let hearts = document.querySelectorAll(".cards-item__icon");
 
         hearts.forEach((item) => {
-            item.addEventListener("click", () => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
                 item.classList.toggle("cards-item__icon_active");
             });
         });
