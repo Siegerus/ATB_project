@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded" , function() {
     let parent = this.document.querySelector(".object__tabs"),
         tabs = this.document.querySelectorAll(".object__tab"),
         content = this.document.querySelectorAll(".object__content"),
-        heart = this.document.querySelector(".cards-item__icon"),
+        hearts = this.document.querySelectorAll(".cards-item__icon"),
         next = this.document.querySelector(".object__arrow_next"),
         prev = this.document.querySelector(".object__arrow_prev"),
         focusBox = this.document.querySelector(".object__focus-box"),
@@ -21,23 +21,33 @@ window.addEventListener("DOMContentLoaded" , function() {
         scrollPrev = this.document.querySelector(".catalog-arrow_obj_prev"),
         scrollBlock = this.document.querySelector(".object__tabs-wrapper");
 
-    heart.addEventListener("click", function(e) {
-        e.preventDefault();
-        this.classList.toggle("cards-item__icon_active");
-    });
+    hearts.forEach((item) => {
+        item.addEventListener("click", function(e) {
+            e.preventDefault();
+            item.classList.toggle("cards-item__icon_active");
+        });
+    });  
+
+    
 
     let setSlider = () => {
 
         slider = tns({
             container: ".object-slider",
             items: 3,
-            axis: "vertical",
+            /* axis: "vertical", */
+            axis: "horizontal",
             swipeAngle: false,
             speed: 400,
             nav: false,
             controls: false,
-            gutter: 9,
+            gutter: 5,
             responsive: {
+                577: {
+                    items: 4,
+                    gutter: 9,
+                },
+
                 993: {
                     items: 4,
                 },

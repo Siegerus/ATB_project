@@ -110,9 +110,7 @@
             justify-content: space-between;
         }
 
-        &-item {
-            margin: 0 0 48px 0;
-
+        &-item {            
             &:nth-child(2) {
                 margin-left:0;
             }
@@ -145,12 +143,23 @@
         &__headline {
             flex-wrap: wrap;
         }
+
+        &-item {
+            min-width: 200px;
+            margin: 0 0 48px 0;
+        }
     }
 }
 
 @media (max-width: 1200px) {
     .container {
         max-width: 968px;
+    }
+
+    .footer {
+        &-item {
+            min-width: unset;
+        }
     }
 
 }

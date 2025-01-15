@@ -20,6 +20,7 @@
         grid-template-columns: repeat(4, minmax(360px, auto));
         grid-template-rows: minmax(322px, auto);
         column-gap: 25px;
+        row-gap: 20px;
         padding-top: 30px;
 
         &_ctg {
@@ -29,6 +30,10 @@
             column-gap: 38px;
             row-gap: 38px;
             padding: 0;
+        }
+
+        &_obj {
+            grid-template-rows: minmax(370px, auto);
         }
     }
 
@@ -75,6 +80,8 @@
     &-item {
         position: relative;
         cursor: pointer;
+        border: 1px solid $white;
+        border-radius: 10px;
 
         &_ctg {
             border: 1px solid $white;
@@ -85,6 +92,12 @@
             margin-top: 78px;
             width: 491px;
             border: none;
+            cursor: default;
+        }
+
+        &_obj-sm {
+            border: 1px solid $white;
+            border-radius: 10px;
         }
 
         &__img {
@@ -287,11 +300,19 @@
     .cards {
         &__wrapper{
             grid-template-columns: repeat(4, minmax(260px, auto));
+            grid-template-rows: minmax(305px, auto);
+            grid-auto-rows: minmax(305px, auto);
             column-gap: 15px;
 
             &_ctg {
                 grid-template-columns: repeat(3, minmax(260px, 310px));
+                grid-template-rows: repeat(3, minmax(441px, auto));
+                grid-auto-rows: minmax(441px, auto);
                 column-gap: 13px;
+            }
+
+            &_obj {
+                grid-template-rows: minmax(333px, auto);
             }
         } 
 
@@ -309,6 +330,9 @@
     }
     .cards {
         &__wrapper{
+            grid-template-rows: minmax(270px, auto);
+            grid-auto-rows: minmax(270px, auto);
+            
             &_ctg {
                 grid-template-columns: repeat(3, minmax(240px, 260px));
                 column-gap: 8px;
@@ -352,6 +376,10 @@
                 grid-template-columns: repeat(2, minmax(260px, 315px));
                 column-gap: 10px;
             }
+
+            &_obj {
+                grid-template-rows: minmax(260px, auto);
+            }
         } 
 
         &-item {
@@ -392,6 +420,7 @@
         &__wrapper{
             grid-template-columns: repeat(2, minmax(300px, auto));
             column-gap: 10px;
+            row-gap: 20px;
 
             &_ctg {
                 grid-template-columns: minmax(260px, 350px);
@@ -400,6 +429,8 @@
             }
 
             &_obj {
+                grid-template-rows: minmax(330px, auto);
+                grid-auto-rows: minmax(330px, auto);
                 row-gap: 20px;
             }
         } 
@@ -540,6 +571,13 @@
             &_obj {
                 grid-template-columns: minmax(343px, 360px);
             }
+
+            &_obj {
+                grid-template-rows: repeat(4, minmax(386px, auto));
+                padding-top: 0;
+                margin-top: 44px;
+                row-gap: 30px;
+            }
         }
 
         &__footer {
@@ -559,6 +597,16 @@
                 hr {
                     margin: 20px 0 18px 0;
                 }
+            }
+
+            &_obj {
+                padding-bottom: 0;
+                border: none;
+            }
+
+            &_obj-sm {
+                height: unset;
+                padding-bottom: 26px;
             }
 
             &__gray {
@@ -584,11 +632,26 @@
                         margin-top: 0;
                     }
                 }
+
+                &_obj {
+                    padding: 0;
+                    margin-top: 2px;
+                    line-height: 18px;
+
+                    div {
+                        margin-top: 6px;
+                    }
+                }
             }
 
             &__icon {
                 top: 8px;
                 right: 9px; 
+
+                &_obj {
+                    top: 0;
+                    right: 0;
+                }
             }
         }
     }

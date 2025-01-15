@@ -425,7 +425,7 @@
             display: none;
             z-index: 5;
             position: absolute;
-            top: 62px;
+            top: 72px;
             left: 50%;
             transform: translateX(-50%);
             flex-direction: column;
@@ -451,11 +451,8 @@
             width: 100%;
             margin-right: 0;
             font-size: 17px;
-            padding-bottom: 10px;
-
-            &_obj {
-                padding-bottom: 15px;
-            }
+            padding-top: 13px;
+            padding-bottom: 13px;
 
             &_active {
                 border: none;
@@ -481,12 +478,20 @@
             border: 1px solid $white;
             border-radius: 10px;
 
+            &_obj {
+                padding-bottom: 17px;
+                padding-top: 16px;    
+            }
         }
         
         &-select-text {
             font-weight: 300;
             font-size: 16px;
             color: $gray;
+
+            &_obj {
+                line-height: 16px;
+            }
         }
 
         &-select-icon {
@@ -495,6 +500,8 @@
             justify-content: center;
             width: 19px;
             height: 20px;
+            min-width: 19px;
+            min-height: 20px;
             transition: all 0.3s;
 
             img {
@@ -570,6 +577,16 @@
 
         &-select-text {
             line-height: 16px;
+        }
+
+        &-nav {
+            &_obj {
+                ul {
+                    li {
+                        line-height: 20px;
+                    }
+                }
+            }
         }
     }
 }

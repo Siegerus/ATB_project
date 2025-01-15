@@ -44,17 +44,22 @@
     }
 
     &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 45px;
+        padding-bottom: 45px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%) rotate(90deg);
         cursor: pointer;
 
         &_prev {
-            top: 0;
+            top: -42px;
         }
 
         &_next {
-            bottom: -9px;
+            bottom: -51px;
         }
 
         svg {
@@ -72,14 +77,14 @@
 
     &__focus-box {
         width: 493px;
+        height: 355px;
         margin-left: 23px;
-        transition: all 0.3s;
+        border-radius: 10px;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.3s;
         }
     }
 
@@ -149,7 +154,7 @@
 
             &:nth-child(8) {
                 span {
-                    margin: 0 5px;
+                    margin: 0 3px;
                 }
             }
 
@@ -259,6 +264,17 @@
 
         &__label-item {
             margin-right: 41px;
+
+            &_spec {
+                align-items: center;
+                /* justify-content: space-between; */
+            }
+
+            /* &__label-icon {
+                &:nth-child(2) {
+                    max-width: 53px;
+                }
+            } */
         }
 
         &-slider__item {
@@ -401,5 +417,69 @@
     .container {
         max-width: 100%;
         padding: 0 16px;
+    }
+
+    .object {
+        padding-top: 20px;
+
+        &__wrapper {
+            margin-top: 40px;
+        }
+
+        &__bottom {
+            margin-top: 40px;
+        }
+
+        &__content {
+            margin-top: 18px;
+            margin-right: -16px;
+            padding-bottom: 30px;
+        }
+
+        &-table {
+            grid-template-columns: 241px minmax(493px, auto);
+            width: unset;
+        }
+
+        &__view {
+            flex-direction: column;
+        }
+
+        &__focus-box {
+            width: 100%;
+            height: unset;
+            max-height: 247px;
+            margin: 0;
+        }
+
+        &__slider-wrap {
+            margin-top: 11px;
+            padding: 0 14px 0 13px;
+        }
+
+        &__arrow {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            top: 50%;
+            bottom: auto;
+            transform: translateY(-50%) rotate(360deg);
+
+            &_prev {
+                right: auto;
+                left: -12px;
+            }
+    
+            &_next {
+                right: -18px;
+                left: auto;
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+                
+            }
+        }
     }
 }
