@@ -12,56 +12,30 @@ window.addEventListener("DOMContentLoaded", function() {
                 item.classList.toggle("cards-item__icon_active");
             });
         });
+
+        let initSlider = ({container : val}) => {
+            let slider = tns({
+                container: val,
+                slideBy: "page",
+                items: 1,
+                autoplay: false,
+                controls: false,
+                navPosition: "bottom",
+                viewportMax: 341,
+                edgePadding: 0,
+                responsive: {
+                    768: {
+                        items: 4,
+                        disable: true,
+                        
+                    }
+                }
+            });
+        };
         
-        let restSlider = tns({
-            container: ".cards__wrapper_rest",
-            slideBy: "page",
-            items: 1,
-            autoplay: false,
-            controls: false,
-            navPosition: "bottom",
-            viewportMax: 341,
-            edgePadding: 0,
-            responsive: {
-                768: {
-                    items: 4,
-                    disable: true,
-                    
-                }
-            }
-        });
-    
-        let hotelsSlider = tns({
-            container: ".cards__wrapper_hotels",
-            slideBy: "page",
-            items: 1,
-            autoplay: false,
-            controls: false,
-            navPosition: "bottom",
-            edgePadding: 0,
-            responsive: {
-                768: {
-                    items: 4,
-                    disable: true
-                }
-            }
-        });
-    
-        let gidsSlider = tns({
-            container: ".cards__wrapper_gids",
-            slideBy: "page",
-            items: 1,
-            autoplay: false,
-            controls: false,
-            navPosition: "bottom",
-            edgePadding: 0,
-            responsive: {
-                768: {
-                    items: 4,
-                    disable: true
-                }
-            }
-        });
+        initSlider({container : ".cards__wrapper_rest"});
+        initSlider({container : ".cards__wrapper_hotels"});
+        initSlider({container : ".cards__wrapper_gids"});
     }
 });
 

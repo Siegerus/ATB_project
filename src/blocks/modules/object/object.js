@@ -1,5 +1,5 @@
 import { tns } from "tiny-slider";
-import { setTabs, setScroll } from "../catalog/catalog";
+import { setTabs, setScroll, setScrollBar } from "../catalog/catalog";
 
 window.addEventListener("DOMContentLoaded" , function() {
 
@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded" , function() {
         prev = this.document.querySelector(".object__arrow_prev"),
         focusBox = this.document.querySelector(".object__focus-box"),
         slider = this.document.querySelector(".object-slider"),
+
+        screenWidth = this.document.documentElement.clientWidth,
 
         selectHeadline = this.document.querySelector(".catalog-select-headline"),
         selectText = selectHeadline.querySelector(".catalog-select-text"),
@@ -28,43 +30,35 @@ window.addEventListener("DOMContentLoaded" , function() {
         });
     });  
 
-    
-
     let setSlider = () => {
 
-        slider = tns({
-            container: ".object-slider",
-            items: 3,
-            /* axis: "vertical", */
-            axis: "horizontal",
-            swipeAngle: false,
-            speed: 400,
-            nav: false,
-            controls: false,
-            gutter: 5,
-            responsive: {
-                577: {
-                    items: 4,
-                    gutter: 9,
-                },
+        let InitSlider = ({axis : val}) => {
+            slider = tns({
+                container: ".object-slider",
+                items: 3,
+                axis: val,
+                swipeAngle: false,
+                speed: 400,
+                nav: false,
+                controls: false,
+                gutter: 5,
+            });
+        
+            next.addEventListener("click", function () {
+                slider.goTo("next");
+            });
+        
+            prev.addEventListener("click", function () {
+                slider.goTo("prev");
+            });
+        };
 
-                993: {
-                    items: 4,
-                },
+        InitSlider({axis : "horizontal"});
 
-                1200: {
-                    items: 3,
-                },
-            }
-        });
-    
-        next.addEventListener("click", function () {
-            slider.goTo("next");
-        });
-    
-        prev.addEventListener("click", function () {
-            slider.goTo("prev");
-        });
+        if (screenWidth > 576) {
+            slider.destroy();
+            setTimeout(() => InitSlider({axis : "vertical"}));
+        }
 
         let toFocusIn = () => {
             let slide = this.document.querySelectorAll(".tns-item");
@@ -83,4 +77,5 @@ window.addEventListener("DOMContentLoaded" , function() {
 
     setTabs(content, parent, tabs, radio, selectText, selectArrow, selectHeadline);
     setScroll(parent, scrollBlock, scrollNext, scrollPrev, tabs);
+    setScrollBar((".object__content"));
 });

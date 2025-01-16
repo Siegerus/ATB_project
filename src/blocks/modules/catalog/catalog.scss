@@ -290,27 +290,25 @@
         display: none;
     }
 
-
-}
-
-.simplebar-scrollbar { 
-    min-width: 6px;
-    max-height: 32px;
-    background: $brown;
-    border-radius: 30px;
- 
-    &::before {
-        /* min-width: 6px; */
-        /* max-width: 2px; */
+    & .simplebar-scrollbar { 
+        min-width: 6px;
+        max-height: 32px;
+        background: $brown;
+        border-radius: 30px;
+     
+        &::before {
+            background: #5690e7;
+        }
+    }
+    
+    & .simplebar-track {
+        max-width: 6px;
+        margin-top: 15px;
         background: #5690e7;
     }
 }
 
-.simplebar-track {
-    max-width: 6px;
-    margin-top: 15px;
-    background: #5690e7;
-}
+
 
 
 @media (max-width: 1679px) {

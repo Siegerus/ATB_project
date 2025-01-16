@@ -79,12 +79,13 @@
         width: 493px;
         height: 355px;
         margin-left: 23px;
-        border-radius: 10px;
+        
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 10px;
         }
     }
 
@@ -130,6 +131,11 @@
 
     &__content {
         margin-top: 30px;
+        overflow: auto;
+
+        &_label {
+            overflow-x: scroll;
+        }
     }
 
     &-table {
@@ -217,6 +223,20 @@
     &__near {
         margin-top: 60px;
     }
+
+    & .simplebar-scrollbar { 
+        background: $brown;
+        border-radius: 30px;
+     
+        &::before {
+            background: #5690e7;
+        }
+    }
+    
+    & .simplebar-track {
+        max-height: 6px;
+        background: #5690e7;
+    }
 }
 
 @media (max-width: 1679px) {
@@ -262,19 +282,8 @@
             }
         }
 
-        &__label-item {
-            margin-right: 41px;
-
-            &_spec {
-                align-items: center;
-                /* justify-content: space-between; */
-            }
-
-            /* &__label-icon {
-                &:nth-child(2) {
-                    max-width: 53px;
-                }
-            } */
+        &__label-wrapper {
+            width: 1350px;
         }
 
         &-slider__item {
@@ -285,8 +294,7 @@
             &__title {
                 width: 215px;
                 margin: 0;
-                line-height: 52px;
-                
+                line-height: 52px; 
             }
         }
     }
@@ -298,11 +306,13 @@
     }
 
     .object {
-
-
         &__wrapper  {
             flex-direction: column;
             margin-top: 30px;
+        }
+
+        &__content {
+            padding-bottom: 30px;
         }
 
         &-item__title {
@@ -326,6 +336,7 @@
 
         &__focus-box {
             width: 643px;
+            height: 100%;
             margin-left: 0;
             margin-right: 20px;
         }
@@ -349,6 +360,14 @@
 
         &__wrapper {
             align-items: center;
+        }
+
+        &__label-wrapper {
+            width: 1210px;
+        }
+
+        &__label-item {
+            margin-right: 22px;
         }
 
         &__item-map-wrap {
@@ -433,7 +452,12 @@
         &__content {
             margin-top: 18px;
             margin-right: -16px;
-            padding-bottom: 30px;
+
+            &_label {
+                margin-right: 0;
+                padding-top: 20px;
+                padding-bottom: 0;
+            }
         }
 
         &-table {
@@ -449,6 +473,7 @@
             width: 100%;
             height: unset;
             max-height: 247px;
+            max-width: 345px;
             margin: 0;
         }
 

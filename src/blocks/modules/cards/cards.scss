@@ -547,7 +547,11 @@
     }
 
     .cards {
-        padding-top: 25px;  
+        padding-top: 25px;
+        
+        &_obj {
+            padding-top: 0;
+        }
 
         &__br {
             display: block;
@@ -569,11 +573,8 @@
             }
 
             &_obj {
-                grid-template-columns: minmax(343px, 360px);
-            }
-
-            &_obj {
-                grid-template-rows: repeat(4, minmax(386px, auto));
+                grid-template-rows: repeat(4, auto);
+                grid-template-columns: 100%;
                 padding-top: 0;
                 margin-top: 44px;
                 row-gap: 30px;

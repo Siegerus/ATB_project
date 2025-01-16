@@ -72,7 +72,7 @@ let setTabs = function (contentIt, parentIt, tabsIt, radioIt, selectTextIt, sele
             toFadeOut(parentIt, "catalog-tabs_active");
         };
         let hideByOverclick = function (e) {
-            if (e.target.closest(".catalog-tabs") || e.target.closest(".catalog-select-headline")) {
+            if (e.target.classList.contains("catalog-tabs") || e.target.closest(".catalog-select-headline")) {
                 return;
             }
             hideSelect();
@@ -94,8 +94,24 @@ let setTabs = function (contentIt, parentIt, tabsIt, radioIt, selectTextIt, sele
     };
     setSelect();
 };
+
+let setScrollBar  = (classBar) => {
+    window.ResizeObserver = ResizeObserver;
+    Array.prototype.forEach.call(
+        document.querySelectorAll(classBar),
+        (el) => {
+            new SimpleBar(el, {
+                autoHide: false,
+            });
+        }
+    );
+    SimpleBar.removeObserver();
+};
+
 export { setScroll };
 export { setTabs };
+export { setScrollBar };
+
 
 window.addEventListener("DOMContentLoaded", function () {
     if (this.document.querySelector(".catalog")) {
@@ -126,22 +142,6 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        let setScrollBar  = () => {
-            window.ResizeObserver = ResizeObserver;
-
-            Array.prototype.forEach.call(
-                document.querySelectorAll(".catalog-accord__scroll-box"),
-                (el) => {
-                    new SimpleBar(el, {
-                        autoHide: false,
-                    });
-                }
-            );
-    
-            SimpleBar.removeObserver();
-        };
-
-        setScrollBar();
         
         let setAccordeon = () => {
             function showContent(a) {
@@ -195,5 +195,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         setTabs(content, parent, tabs, radio, selectText, selectArrow, selectHeadline);
         setScroll(parent, scrollBlock, arrowNext, arrowPrev, tabs);
+        setScrollBar((".catalog-accord__scroll-box"));
     }
 });
