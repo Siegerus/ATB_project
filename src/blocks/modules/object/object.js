@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded" , function() {
         hearts = this.document.querySelectorAll(".cards-item__icon"),
         next = this.document.querySelector(".object__arrow_next"),
         prev = this.document.querySelector(".object__arrow_prev"),
-        focusBox = this.document.querySelector(".object__focus-box"),
+        focusBox = this.document.querySelectorAll(".object__focus-box"),
         slider = this.document.querySelector(".object-slider"),
 
         screenWidth = this.document.documentElement.clientWidth,
@@ -55,22 +55,25 @@ window.addEventListener("DOMContentLoaded" , function() {
 
         InitSlider({axis : "horizontal"});
 
-        if (screenWidth > 576) {
-            slider.destroy();
-            setTimeout(() => InitSlider({axis : "vertical"}));
-        }
-
         let toFocusIn = () => {
             let slide = this.document.querySelectorAll(".tns-item");
 
             slide.forEach((item) => {
                 item.addEventListener("click", () => {
-                    focusBox.innerHTML = item.innerHTML;
+                    for(let i = 0; i < focusBox.length; i++) {
+                        focusBox[i].innerHTML = item.innerHTML;
+                    }
                 });
             });
         };
 
         toFocusIn();
+
+        if (screenWidth > 576) {
+            slider.destroy();
+            setTimeout(() => InitSlider({axis : "vertical"}), 1);
+            setTimeout(() => toFocusIn(), 2);
+        }
     };
 
     setSlider();

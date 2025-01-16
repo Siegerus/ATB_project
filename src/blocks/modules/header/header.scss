@@ -334,9 +334,12 @@
         list-style-type: none;
 
         li {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: $middle-blue;
+            a {
+                display: block;
+                padding: 8px 0;
+                font-size: 18px;
+                color: $middle-blue;
+            }
         }
     }
 
