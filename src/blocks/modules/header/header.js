@@ -114,24 +114,24 @@ window.addEventListener("DOMContentLoaded", function () {
     setTextContent();
 
     let modalSet = function () {
-        let modal = document.querySelector(".header__overlay"),
+        let modal = document.querySelector(".overlay_header"),
             hamburger = document.querySelector(".header__hamburger_m-visible"),
-            close = document.querySelector(".header__close");
+            close = document.querySelector(".header-close");
 
         hamburger.addEventListener("click", (e) => {
             if (e.target.closest(".header__hamburger_m-visible")) {
-                modal.classList.toggle("header__overlay_active");
+                modal.classList.toggle("overlay_header_active");
                 toFadeIn(modal);
             }
         });
 
         close.addEventListener("click", () => {
-            toFadeOut(modal, "header__overlay_active");
+            toFadeOut(modal, "overlay_header_active");
         });
 
         modal.addEventListener("click", function (e) {
-            if (e.target.closest(".header__nav-mobile")) return;
-            toFadeOut(modal, "header__overlay_active");
+            if (e.target.closest(".header-nav-mobile")) return;
+            toFadeOut(modal, "overlay_header_active");
         });
     };
 
