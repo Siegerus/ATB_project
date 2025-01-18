@@ -78,6 +78,7 @@
         "resize-observer-polyfill": "^1.5.1",
         "simplebar": "^6.3.0",
         "tiny-slider": "^2.9.4",
+        "validate.js": "^0.13.1",
         "webpack": "^5.70.0",
         "webpack-stream": "^7.0.0"
     },

@@ -1,8 +1,7 @@
 import SimpleBar from "simplebar";
 import ResizeObserver from "resize-observer-polyfill";
 
-import { toFadeIn } from "../header/header.js";
-import { toFadeOut } from "../header/header.js";
+import { toFadeIn, toFadeOut } from "../header/header.js";
 
 let setScroll = (parentIt, scrollBlockIt, arrowNextIt, arrowPrevIt, tabsIt) => {
     let scrollRight = () => {

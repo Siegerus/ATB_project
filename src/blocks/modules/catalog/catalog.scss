@@ -87,7 +87,26 @@
     }
 
     &-radio {
-        display: none;   
+        display: none;  
+        
+        &_modal {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            min-width: 20px;
+            min-height: 20px;
+            padding: 4px;
+            background-clip: content-box;
+            border: 1px solid #bbbbbb;
+            background-color: #e7e6e7;
+            border-radius: 50%; 
+            cursor: pointer;
+
+            &:checked  {
+                background-color: $brown;
+            }
+        }
     }
 
     &-arrows {

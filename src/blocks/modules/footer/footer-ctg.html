@@ -37,3 +37,38 @@
         <div class="footer__policy">© 2015 -2024  ТОО «Бюро по туризму Алматы (Almaty Tourism Bureau)</div>
     </div>
 </footer>
+<div class="overlay overlay_modal modal modal_registration">
+    <div class="modal-window">
+        <div class="title title_modal title_fz28 modal-window__title">Регистрация</div>
+        <form class="modal-form" id="reg-form">
+            <input type="text" id="user" name="user" placeholder="Имя" class="modal-form__input">
+            <input type="text" id="sername" name="sername" placeholder="Фамилия" class="modal-form__input">
+            <input type="text" id="phone" name="phone" placeholder="Номер телефона" class="modal-form__input">
+            <input type="email" id="mail" name="mail" placeholder="Emai" class="modal-form__input">
+            <input type="text" id="company" name="company" placeholder="Название компании" class="modal-form__input">
+            <div class="modal-form__radio-wrap">
+                <div>
+                    <input type="radio" value="Yes" id="res-yes" name="residents" class="modal-form__radio catalog-radio catalog-radio_modal">
+                    <label for="res-yes">Резидент РК</label>
+                </div>
+                <div>
+                    <input type="radio" value="No" id="res-no" name="residents" class="modal-form__radio catalog-radio catalog-radio_modal">
+                    <label for="res-no">Нерезидент РК</label>
+                </div> 
+            </div>
+            <button class="btn modal-btn">зарегистрироваться</button>
+        </form>
+        <div class="modal-window__close header-close header-close_modal"></div>
+    </div>
+</div>
+<div class="overlay overlay_modal modal modal_autorization">
+    <div class="modal-window">
+        <div class="title title_modal title_fz28 modal-window__title">Авторизация</div>
+        <form class="modal-form" id="enter-form">
+            <input type="text" id="phone/mail" name="phone/mail" placeholder="Email или номер телефона" class="modal-form__input">
+            <input type="password" id="pass" name="pass" placeholder="Пароль" class="modal-form__input">
+            <button class="btn modal-btn">Войти</button>
+        </form>
+        <div class="modal-window__close header-close header-close_modal"></div>
+    </div>
+</div>

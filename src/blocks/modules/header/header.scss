@@ -13,6 +13,12 @@
             display: block;
         }
     }
+
+    &_modal {
+        &_active {
+            display: block;
+        }
+    }
 }
 
 .header {
@@ -374,8 +380,8 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 3px;
-            height: 27px;
+            width: 2px;
+            height: 28px;
             transform: translate(-50%, -50%);
             border-radius: 20px;
             background-color: #fff;
@@ -386,11 +392,24 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 27px;
-            height: 3px;
+            width: 28px;
+            height: 2px;
             transform: translate(-50%, -50%);
             border-radius: 20px;
             background-color: #fff;
+        }
+
+        &_modal {
+            top: 20px;
+            right: 19px;
+
+            &::before {
+                background-color: $deep-blue;
+            }
+
+            &::after {
+                background-color: $deep-blue;
+            }
         }
     }
 
@@ -842,7 +861,7 @@
             }
         }
 
-        &__nav-mobile {
+        &-nav-mobile {
             width: 100%;
             height: 100%;
 
@@ -851,7 +870,7 @@
             }
         }
 
-        &__close {
+        &-close {
             top: 15px;
             right: 15px;
 
@@ -865,6 +884,10 @@
 
             &::after {
                 width: 26px;
+            }
+
+            &_modal {
+                
             }
         }
     }
