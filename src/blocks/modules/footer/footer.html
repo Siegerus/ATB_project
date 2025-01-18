@@ -75,8 +75,10 @@
     <div class="modal-window">
         <div class="title title_modal title_fz28 modal-window__title">Авторизация</div>
         <form class="modal-form" id="enter-form">
-            <input type="text" id="phone/mail" name="phone/mail" placeholder="Email или номер телефона" class="modal-form__input">
+            <input type="text" id="phone/mail" name="phoneNmail" placeholder="Email или номер телефона" class="modal-form__input">
+            <div class="modal__error-box"></div>
             <input type="password" id="pass" name="pass" placeholder="Пароль" class="modal-form__input">
+            <div class="modal__error-box"></div>
             <button class="btn modal-btn">Войти</button>
         </form>
         <div class="modal-window__close header-close header-close_modal"></div>
