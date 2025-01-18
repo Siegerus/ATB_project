@@ -11,7 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
         enterForm = this.document.getElementById("enter-form"),
         enter = this.document.querySelector(".header__enter"),
         regItem = this.document.querySelector(".header__heart"),
-        close = this.document.querySelectorAll(".modal-window__close");
+        close = this.document.querySelectorAll(".modal-window__close"),
+        messageBox = this.document.createElement("div");
 
     let setModal = (launchItem, launchParentClass, modalType, activeClass) => {
 
@@ -66,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () {
             numInput.value = numInput.value.replace(/[^0-9]/g, "");
         });
 
-        let getValidationResult = () => {
+        let getRegFormValidationResult = () => {
             validate.validators.presence.options = { message: "^Обязательно к заполнению" };
             validate.validators.email.options = { message: "^Введите корректный Email" };
 
@@ -77,18 +78,13 @@ window.addEventListener("DOMContentLoaded", function () {
                 companyVal = validate.collectFormValues(regForm).company,
                 residentsVal = validate.collectFormValues(regForm).residents,
 
-                phoneNmailVal = validate.collectFormValues(enterForm).phoneNmail,
-                passwordVal = validate.collectFormValues(enterForm).pass,
-
                 inputValues = {
                     user: nameVal,
                     sername: sernameVal,
                     phone: phoneVal,
                     mail: mailVal,
                     company: companyVal,
-                    residents: residentsVal,
-                    phoneMail: phoneNmailVal,
-                    password: passwordVal
+                    residents: residentsVal
                 },
                 constraints = {
                     user: {
@@ -134,6 +130,24 @@ window.addEventListener("DOMContentLoaded", function () {
                     residents: {
                         presence: true,
                     },
+                },
+                result = validate(inputValues, constraints);
+
+            return result;
+        };
+
+        /* let getEnterFormValidationResult = () => {
+            validate.validators.presence.options = { message: "^Обязательно к заполнению" };
+            validate.validators.email.options = { message: "^Введите корректный Email" };
+
+            let phoneNmailVal = validate.collectFormValues(enterForm).phoneNmail,
+                passwordVal = validate.collectFormValues(enterForm).pass,
+
+                inputValues = {
+                    phoneMail: phoneNmailVal,
+                    password: passwordVal
+                },
+                constraints = {
                     phoneMail: {
                         presence: true,
                     },
@@ -148,47 +162,52 @@ window.addEventListener("DOMContentLoaded", function () {
                 result = validate(inputValues, constraints);
 
             return result;
-        };
+        }; */
 
         let setErrors = () => {
-            let validationResult = getValidationResult();
+
+            let RegFormValidationResult = getRegFormValidationResult();
+            /* let EnterFormValidationResult = getEnterFormValidationResult(); */
 
             errorBox.forEach((item) => item.style.display = "block");
-            userErrBox.textContent = validationResult.user;
-            sernameErrBox.textContent = validationResult.sername;
-            phoneErrBox.textContent = validationResult.phone;
-            mailErrBox.textContent = validationResult.mail;
-            companyErrBox.textContent = validationResult.company;
-            residentsErrBox.textContent = validationResult.residents;
-            phoneNmailErrBox.textContent = validationResult.phoneMail;
-            passwordErrBox.textContent = validationResult.password;
-
+            userErrBox.textContent = RegFormValidationResult.user;
+            sernameErrBox.textContent = RegFormValidationResult.sername;
+            phoneErrBox.textContent = RegFormValidationResult.phone;
+            mailErrBox.textContent = RegFormValidationResult.mail;
+            companyErrBox.textContent = RegFormValidationResult.company;
+            residentsErrBox.textContent = RegFormValidationResult.residents;
+            /* phoneNmailErrBox.textContent = EnterFormValidationResult.phoneMail;
+            passwordErrBox.textContent = EnterFormValidationResult.password; */
         };
 
 
         let toSubmitForm = (form, url) => {
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
-                let validationResult = getValidationResult();
 
+                
+                let validationResult = getRegFormValidationResult();
                 if (validationResult) {
                     setErrors();
                     return;
                 }
+                
+                
 
                 let formData = new FormData(form),
                     request = new XMLHttpRequest(formData);
 
                 request.open("POST", url);
                 request.send();
-
                 request.addEventListener("readystatechange", () => {
                     if (request.readyState === 4 && request.status == 200) {
                         modal.forEach((item) => {
                             item.style.display = "none";
                         });
                         form.reset();
-                        alert("Спасибо!");
+                        document.body.appendChild(messageBox);
+                        messageBox.classList.add("modal-window", "modal-window_message");
+                        messageBox.textContent = "Спасибо!";
 
                     } else if (request.readyState < 4) {
                         alert("Отправка данных...");
@@ -200,15 +219,17 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         };
 
-        toSubmitForm(regForm);
-        toSubmitForm(enterForm);
+        /* toSubmitForm(regForm, "../php/telegram.php"); */
+        /* toSubmitForm(enterForm, "../php/telegram.php"); */
 
-        let setInputs = (inputs) => {
+        let setInputs = (inputs, validationResultType) => {
             inputs.forEach((item) => {
                 item.addEventListener("change", () => {
-                    let validationResult = getValidationResult();
+                    
+                    /* let enterFormValidationResult = getEnterFormValidationResult(),
+                        regFormValidationResult = getRegFormValidationResult(); */
 
-                    if (validationResult) {
+                    if (validationResultType) {
                         setErrors();
                     } else {
                         errorBox.forEach((item) => {
@@ -220,7 +241,8 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         };
 
-        setInputs(regInputs, enterInputs);
+        setInputs(regInputs, getRegFormValidationResult());
+        /* setInputs(enterInputs, getEnterFormValidationResult()); */
     };
 
     setForm();
