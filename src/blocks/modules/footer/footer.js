@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", function () {
             residentsErrBox.textContent = validationResult.residents;
             phoneNmailErrBox.textContent = validationResult.phoneMail;
             passwordErrBox.textContent = validationResult.password;
-
+ 
         };
 
 
