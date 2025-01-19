@@ -178,21 +178,14 @@ window.addEventListener("DOMContentLoaded", function () {
         };
 
 
-        let toSubmitForm = (form, url) => {
+        let toSubmitForm = (form, validationResultType, setErrorsType ,url) => {
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 
-                if(regForm) {
-                    let validationResult = getRegFormValidationResult();
+                if(form) {
+                    let validationResult = validationResultType();
                     if (validationResult) {
-                        setRegFormErrors();
-                        return;
-                    }
-                }
-                if(enterForm) {
-                    let validationResult = getEnterFormValidationResult();
-                    if (validationResult) {
-                        setEnterFormErrors();
+                        setErrorsType();
                         return;
                     }
                 }
@@ -221,8 +214,8 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         };
 
-        toSubmitForm(regForm);
-        toSubmitForm(enterForm);
+        toSubmitForm(regForm, getRegFormValidationResult, setRegFormErrors);
+        toSubmitForm(enterForm, getEnterFormValidationResult, setEnterFormErrors);
 
         let setInputs = (inputs, validationResultType, setErrorsType) => {
             inputs.forEach((item) => {
