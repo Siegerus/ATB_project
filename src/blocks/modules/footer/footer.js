@@ -204,6 +204,9 @@ window.addEventListener("DOMContentLoaded", function () {
                         });
                         form.reset();
                         alert("Спасибо!");
+                        document.body.appendChild(messageBox);
+                        messageBox.classList.add("modal-window", "modal-window_message");
+                        messageBox.textContent = "Спасибо!";
 
                     } else if (request.readyState < 4) {
                         alert("Отправка данных...");
