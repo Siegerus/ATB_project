@@ -67,10 +67,10 @@ window.addEventListener("DOMContentLoaded", function () {
             numInput.value = numInput.value.replace(/[^0-9]/g, "");
         });
 
-        let getRegFormValidationResult = () => {
-            validate.validators.presence.options = { message: "^Обязательно к заполнению" };
-            validate.validators.email.options = { message: "^Введите корректный Email" };
+        validate.validators.presence.options = { message: "^Обязательно к заполнению" };
+        validate.validators.email.options = { message: "^Введите корректный Email" };
 
+        let getRegFormValidationResult = () => {
             let nameVal = validate.collectFormValues(regForm).user,
                 sernameVal = validate.collectFormValues(regForm).sername,
                 phoneVal = validate.collectFormValues(regForm).phone,
@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     phone: phoneVal,
                     mail: mailVal,
                     company: companyVal,
-                    residents: residentsVal
+                    residents: residentsVal,
                 },
                 constraints = {
                     user: {
@@ -136,10 +136,7 @@ window.addEventListener("DOMContentLoaded", function () {
             return result;
         };
 
-        /* let getEnterFormValidationResult = () => {
-            validate.validators.presence.options = { message: "^Обязательно к заполнению" };
-            validate.validators.email.options = { message: "^Введите корректный Email" };
-
+        let getEnterFormValidationResult = () => {
             let phoneNmailVal = validate.collectFormValues(enterForm).phoneNmail,
                 passwordVal = validate.collectFormValues(enterForm).pass,
 
@@ -162,38 +159,39 @@ window.addEventListener("DOMContentLoaded", function () {
                 result = validate(inputValues, constraints);
 
             return result;
-        }; */
+        };
 
-        let setErrors = () => {
-
-            let RegFormValidationResult = getRegFormValidationResult();
-            /* let EnterFormValidationResult = getEnterFormValidationResult(); */
-
+        let setRegFormErrors = () => {
+            let regFormvalidationResult = getRegFormValidationResult();
             errorBox.forEach((item) => item.style.display = "block");
-            userErrBox.textContent = RegFormValidationResult.user;
-            sernameErrBox.textContent = RegFormValidationResult.sername;
-            phoneErrBox.textContent = RegFormValidationResult.phone;
-            mailErrBox.textContent = RegFormValidationResult.mail;
-            companyErrBox.textContent = RegFormValidationResult.company;
-            residentsErrBox.textContent = RegFormValidationResult.residents;
-            /* phoneNmailErrBox.textContent = EnterFormValidationResult.phoneMail;
-            passwordErrBox.textContent = EnterFormValidationResult.password; */
+            userErrBox.textContent = regFormvalidationResult.user;
+            sernameErrBox.textContent = regFormvalidationResult.sername;
+            phoneErrBox.textContent = regFormvalidationResult.phone;
+            mailErrBox.textContent = regFormvalidationResult.mail;
+            companyErrBox.textContent = regFormvalidationResult.company;
+            residentsErrBox.textContent = regFormvalidationResult.residents;
+        };
+
+        let setEnterFormErrors = () => {
+            let enterFormvalidationResult = getEnterFormValidationResult();
+            errorBox.forEach((item) => item.style.display = "block");
+            phoneNmailErrBox.textContent = enterFormvalidationResult.phoneMail;
+            passwordErrBox.textContent = enterFormvalidationResult.password;
         };
 
 
-        let toSubmitForm = (form, url) => {
+        let toSubmitForm = (form, validationResultType, setErrorsType, url) => {
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
-
                 
-                let validationResult = getRegFormValidationResult();
-                if (validationResult) {
-                    setErrors();
-                    return;
+                if(form) {
+                    let validationResult = validationResultType();
+                    if (validationResult) {
+                        setErrorsType();
+                        return;
+                    }
                 }
                 
-                
-
                 let formData = new FormData(form),
                     request = new XMLHttpRequest(formData);
 
@@ -205,6 +203,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             item.style.display = "none";
                         });
                         form.reset();
+                        alert("Спасибо!");
                         document.body.appendChild(messageBox);
                         messageBox.classList.add("modal-window", "modal-window_message");
                         messageBox.textContent = "Спасибо!";
@@ -219,18 +218,17 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         };
 
-        /* toSubmitForm(regForm, "../php/telegram.php"); */
-        /* toSubmitForm(enterForm, "../php/telegram.php"); */
+        toSubmitForm(regForm, getRegFormValidationResult, setRegFormErrors, "../php/telegram.php");
+        toSubmitForm(enterForm, getEnterFormValidationResult, setEnterFormErrors, "../php/telegram.php");
 
-        let setInputs = (inputs, validationResultType) => {
+        let setInputs = (inputs, validationResultType, setErrorsType) => {
             inputs.forEach((item) => {
                 item.addEventListener("change", () => {
-                    
-                    /* let enterFormValidationResult = getEnterFormValidationResult(),
-                        regFormValidationResult = getRegFormValidationResult(); */
+                    let validationResult = validationResultType();
 
-                    if (validationResultType) {
-                        setErrors();
+                    if (validationResult) {
+                        setErrorsType();
+
                     } else {
                         errorBox.forEach((item) => {
                             item.style.display = "none";
@@ -241,8 +239,8 @@ window.addEventListener("DOMContentLoaded", function () {
             });
         };
 
-        setInputs(regInputs, getRegFormValidationResult());
-        /* setInputs(enterInputs, getEnterFormValidationResult()); */
+        setInputs(regInputs, getRegFormValidationResult, setRegFormErrors);
+        setInputs(enterInputs, getEnterFormValidationResult, setEnterFormErrors);
     };
 
     setForm();
