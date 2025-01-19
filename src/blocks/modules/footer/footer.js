@@ -161,7 +161,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let setRegFormErrors = () => {
             let regFormvalidationResult = getRegFormValidationResult();
-
             errorBox.forEach((item) => item.style.display = "block");
             userErrBox.textContent = regFormvalidationResult.user;
             sernameErrBox.textContent = regFormvalidationResult.sername;
@@ -173,7 +172,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let setEnterFormErrors = () => {
             let enterFormvalidationResult = getEnterFormValidationResult();
-
             errorBox.forEach((item) => item.style.display = "block");
             phoneNmailErrBox.textContent = enterFormvalidationResult.phoneMail;
             passwordErrBox.textContent = enterFormvalidationResult.password;
@@ -184,14 +182,14 @@ window.addEventListener("DOMContentLoaded", function () {
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
                 
-                if(form.id == ("reg-form")) {
+                if(regForm) {
                     let validationResult = getRegFormValidationResult();
                     if (validationResult) {
                         setRegFormErrors();
                         return;
                     }
                 }
-                if(form.id == ("enter-form")) {
+                if(enterForm) {
                     let validationResult = getEnterFormValidationResult();
                     if (validationResult) {
                         setEnterFormErrors();
