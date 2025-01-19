@@ -11,7 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
         enterForm = this.document.getElementById("enter-form"),
         enter = this.document.querySelector(".header__enter"),
         regItem = this.document.querySelector(".header__heart"),
-        close = this.document.querySelectorAll(".modal-window__close");
+        close = this.document.querySelectorAll(".modal-window__close"),
+        messageBox = this.document.createElement("div");
 
     let setModal = (launchItem, launchParentClass, modalType, activeClass) => {
 
